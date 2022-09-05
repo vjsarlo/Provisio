@@ -180,8 +180,8 @@
 	                        
 	                        <fieldset>
 	                            <div class="input-container ic1">
-							        <input id="email" class="input" type="text" placeholder=" " value="
-							        <c:out value='${loginBean.email}' />" name="email" required="required"/>
+							        <input id="email" class="input" type="text" placeholder=" " 
+							        value="<c:out value='${loginBean.email}' />" name="email" required="required"/>
 							        <div class="cut"></div>
 							        <label for="email" class="placeholder">Email</label>
 							    </div>
@@ -190,8 +190,7 @@
 	                        <fieldset>
 	                            <div class="input-container ic2">
 							        <input id="password" class="input" type="text" placeholder=" " 
-							        	value="<c:out value='${loginBean.password}' />" 
-							        	name="password" required="required"/>
+							        	value="<c:out value='${loginBean.password}' />" name="password" required="required"/>
 							        <div class="cut"></div>
 							        <label for="password" class="placeholder">Password</label>
 							    </div>
