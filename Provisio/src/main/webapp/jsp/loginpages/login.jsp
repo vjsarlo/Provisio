@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  pageEncoding="UTF-8"%>
-   
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
         <html>
 
         <head>
@@ -69,11 +69,11 @@
 				}
 				
 				.ic1 {
-				  margin-top: 20px;
+				  margin-top: 40px;
 				}
 				
 				.ic2 {
-				  margin-top: 20px;
+				  margin-top: 30px;
 				}
 				
 				.input {
@@ -128,7 +128,7 @@
 				}
 				
 				.input:not(:placeholder-shown) ~ .placeholder {
-				  color: #957554;
+				  color: #808097;
 				}
 				
 				.input:focus ~ .placeholder {
@@ -146,7 +146,7 @@
 				  cursor: pointer;
 				  font-size: 18px;
 				  height: 50px;
-				  margin-top: 70px;
+				  margin-top: 38px;
 				  outline: 0;
 				  text-align: center;
 				  width: 50%;
@@ -171,7 +171,7 @@
             <div class="form">
                 <div>
                     <div>
-                    	<form>
+                    	<form action = "loginprocess.jsp" method = "post">
 	                        <caption>
 	                            <h2 class="title">
 	                                    Welcome Back to Provisio! Please Sign In!
@@ -180,7 +180,8 @@
 	                        
 	                        <fieldset>
 	                            <div class="input-container ic1">
-							        <input id="email" class="input" type="text" placeholder=" " value="" name="email" required="required"/>
+							        <input id="email" class="input" type="text" placeholder=" " value="
+							        <c:out value='${loginBean.email}' />" name="email" required="required"/>
 							        <div class="cut"></div>
 							        <label for="email" class="placeholder">Email</label>
 							    </div>
@@ -188,7 +189,9 @@
 	                        
 	                        <fieldset>
 	                            <div class="input-container ic2">
-							        <input id="password" class="input" type="text" placeholder=" " value="" name="password" required="required"/>
+							        <input id="password" class="input" type="text" placeholder=" " 
+							        	value="<c:out value='${loginBean.password}' />" 
+							        	name="password" required="required"/>
 							        <div class="cut"></div>
 							        <label for="password" class="placeholder">Password</label>
 							    </div>
