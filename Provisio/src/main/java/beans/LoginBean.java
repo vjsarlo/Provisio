@@ -22,9 +22,9 @@ public class LoginBean {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/core";
-			String user = "admin";
-			String pass = "pass";
+			String url = "jdbc:mysql://localhost:3306/provisio";
+			String user = "root";
+			String pass = "Qexeoymp4123!";
 			connection = java.sql.DriverManager.getConnection(url,user, pass);
 			statement = connection.prepareStatement("select salt from guestsalt where trim(username)=? "); 
 			statement.setString(1,email.strip()); 

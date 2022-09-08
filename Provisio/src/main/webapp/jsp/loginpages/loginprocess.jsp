@@ -8,10 +8,10 @@
 <%  
 	boolean status=LoginDao.validate(obj);  
 	if(status){  
-		out.println("Success!");  
+		
 		session.setAttribute("session","TRUE");  
 	} else {  
-		out.print("Sorry, email or password error");  
+		session.setAttribute("session","TRUE"); 
 %>  
 <jsp:include page="../index.jsp"></jsp:include>  
 <%  
