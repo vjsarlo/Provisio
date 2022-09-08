@@ -19,7 +19,7 @@ public class AccountLookup {
         
        
         
-        String sql = "Select idguest,firstName, lastname, username, password"
+        String sql = "Select idguest,firstName, lastname, username, password, points"
         		+ "from guest"
             + " where idguest =" + customerID.trim();
         try {
@@ -31,6 +31,7 @@ public class AccountLookup {
               account.setLastName(rs.getString(3));
               account.setUsername(rs.getString(4));
               account.setPassword(rs.getString(5));
+              account.setPoints(rs.getInt(6));
              
               }
             }

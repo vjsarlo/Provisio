@@ -3,7 +3,7 @@ package beans;
 import java.sql.SQLException;
 
 public class LoginBean {
-	private String email, password, salt;
+	private String email, password, salt, customerID;
 
 	public LoginBean() {}
 	
@@ -19,6 +19,7 @@ public class LoginBean {
 		java.sql.Connection connection = null;
 		java.sql.PreparedStatement statement = null;
 		java.sql.ResultSet resultSet = null;
+		System.out.println("In getSalt() email: "+ email);
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,6 +27,7 @@ public class LoginBean {
 			String user = "root";
 			String pass = "Qexeoymp4123!";
 			connection = java.sql.DriverManager.getConnection(url,user, pass);
+			System.out.println("In getSalt() connection: "+connection);
 			statement = connection.prepareStatement("select salt from guestsalt where trim(username)=? "); 
 			statement.setString(1,email.strip()); 
 			System.out.println("Statement: "+statement);
@@ -33,6 +35,7 @@ public class LoginBean {
 			
 			while(resultSet.next()) {
 				salt = resultSet.getString(1);
+				System.out.println("salt in resultset: "+salt);
 			}
 			resultSet.close();
 			statement.close();
@@ -54,4 +57,13 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(String customerID) {
+		this.customerID = customerID;
+	}
+	
 }

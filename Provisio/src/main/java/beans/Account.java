@@ -6,6 +6,7 @@ public class Account {
 	String lastName;
 	String username;
 	String password;
+	Integer points;
 	
 	public String getIdGuest() {
 		return idGuest;
@@ -38,4 +39,10 @@ public class Account {
 		this.password = password;
 	}
 	
+	public Integer getPoints() {
+		return points;
+	}
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
 }

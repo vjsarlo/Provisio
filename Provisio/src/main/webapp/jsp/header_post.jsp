@@ -16,7 +16,7 @@
             <li class="login-register-list-header header-links-style">
               <a href="#">My Account </a>
               <ul class="submenu">
-                <li><a class="rooms-link-header header-links-style" href="./PostLogin/myAccount.html">Reservations</a></li>
+                <li><a href="/Provisio/jsp/myAccount.jsp">Reservations</a></li>
                 <li><a href="/Provisio/jsp/logout.jsp">Logout</a></li>
               </ul>
             </li>

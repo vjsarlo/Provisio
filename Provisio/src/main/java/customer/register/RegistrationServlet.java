@@ -25,7 +25,7 @@ public class RegistrationServlet extends HttpServlet
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Provisio", "root", "Qexeoymp4123!");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/provisio", "root", "Qexeoymp4123!");
             final PreparedStatement pst = con.prepareStatement("INSERT INTO guest(firstname, lastname, username, password,points) values( ?, ?, ?, ?, ?) ");
             pst.setString(1, firstname);
             pst.setString(2, lastname);

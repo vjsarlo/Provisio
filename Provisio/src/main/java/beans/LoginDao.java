@@ -40,16 +40,11 @@ public class LoginDao {
 
 			resultSet = ps.executeQuery();
 
-			System.out.println();
 			while(resultSet.next()) {
 				salt = resultSet.getString(1);
-				System.out.println(salt);
-
 			}
 			
-			ResultSet rs = ps.executeQuery();
-			status = rs.next();
-			System.out.println(status);
+			status =! salt.isEmpty();
 
 		} catch (Exception e) {
 		} finally {
