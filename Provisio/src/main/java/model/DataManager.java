@@ -67,9 +67,15 @@ public class DataManager {
 	 public ArrayList<ExistingReservation> getReservation(String customerID) {
 		    return ReservationLookup.searchReservation(this, customerID);
 		    }
+	 
+	 public ArrayList<ExistingReservation> getReservationByID(String customerID, String reservationID) {
+		 	System.out.println("IN DATA MANAGER getReservationByID()");
+		    return ReservationLookup.searchReservationByID(this, customerID, reservationID);
+		    }
 
 	 public Account getAccountInfo(String customerID) {
 		 	System.out.println("IN DATA MANAGER");
 		    return AccountLookup.getAccountInfo(this, customerID);
 		    }
+	 
 }
