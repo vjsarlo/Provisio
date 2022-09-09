@@ -11,7 +11,7 @@ import beans.ExistingReservation;
 
 public class ReservationLookup {
   public static ArrayList<ExistingReservation> searchReservation(DataManager dataManager,
-      String reservationID) {
+		  String customerID) {
     ArrayList<ExistingReservation> Reservations = new ArrayList<ExistingReservation>();
     Connection connection = dataManager.getConnection(); //connect to database
     if (connection != null) {
@@ -21,12 +21,13 @@ public class ReservationLookup {
        
         
         String sql = "Select r.idreservation, r.idguest, g.firstName, g.lastName, r.checkin, r.checkout,"
-            + "r.numberofguests, r.total, a.cost, a.description, a.flat  "
-            + "from reservation r join guest g on g.idguest = r.idguest"
-            + "left join reservationamenity ra on "
-            + "ra.idreservation = r.idreservation"
-            + "join amenity a on ra.idamenity = a.idamenity"
-            + " where r.idreservation =" + reservationID.trim();
+            + " r.numberofguests, r.total, a.cost, a.description, a.flat  "
+            + " from reservation r join guest g on g.idguest = r.idguest"
+            + " left join reservationamenity ra on "
+            + " ra.idreservation = r.idreservation"
+            + " join amenity a on ra.idamenity = a.idamenity"
+            + " where r.idguest =" + customerID.trim();
+        System.out.println("SQL: "+ sql);
         try {
           ResultSet rs = s.executeQuery(sql); //execute the query
           try {

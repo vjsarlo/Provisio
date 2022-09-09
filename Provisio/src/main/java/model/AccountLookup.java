@@ -19,9 +19,10 @@ public class AccountLookup {
         
        
         
-        String sql = "Select idguest,firstName, lastname, username, password, points"
+        String sql = "Select idguest,firstName, lastname, username, password, points "
         		+ "from guest"
             + " where idguest =" + customerID.trim();
+        System.out.println("SQL: "+sql);
         try {
           ResultSet rs = s.executeQuery(sql); //execute the query
           try {
