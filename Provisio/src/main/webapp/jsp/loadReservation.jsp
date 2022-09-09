@@ -56,7 +56,7 @@
 		<!-- MAIN SECTION START -->
 		<div class="main-section-div">
 			
-			<div class="main-section-text">My Reservations</div>
+			<div class="main-section-text">Reservation</div>
 			
 				<%
 				String custId = session.getAttribute("customerID").toString();
@@ -92,6 +92,7 @@
 
 							</tr>
 							</table>
+							<div class="main-section-text">Amenities Selected</div>
 							<table>
 								<tr>
 									<th>Amenity</th>
