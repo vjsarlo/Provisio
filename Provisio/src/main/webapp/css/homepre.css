@@ -808,6 +808,25 @@ Wasn't sure if we wanted to maintain a singular CSS or if we want to separate ou
     width: 100%;
   }
 
+  table, th, td {
+    border: 2px solid;
+    border-collapse: collapse;
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    background: #d9d9d9;
+  }
+  
+  th {
+  height: 25px;
+  }
+  
+  td {
+  height: 30px;
+  
+  }
+
   /*End of myAccount.html*./
 
   /*reservationLookUp.htm/*/

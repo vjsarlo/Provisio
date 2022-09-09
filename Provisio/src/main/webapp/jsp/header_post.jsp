@@ -17,6 +17,7 @@
               <a href="#">My Account </a>
               <ul class="submenu">
                 <li><a href="/Provisio/jsp/myAccount.jsp">Reservations</a></li>
+                <li><a href="/Provisio/jsp/myBookings.jsp">My Bookings</a></li>
                 <li><a href="/Provisio/jsp/logout.jsp">Logout</a></li>
               </ul>
             </li>

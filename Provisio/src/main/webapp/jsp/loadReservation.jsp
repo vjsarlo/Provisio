@@ -1,6 +1,6 @@
-<%@page import="model.AccountLookup"%>
-<%@page import="beans.Account"%>
-<%@page import="beans.LoginDao"%>
+<%-- <%@page import="model.AccountLookup"%> --%>
+<%-- <%@page import="beans.Account"%> --%>
+<%-- <%@page import="beans.LoginDao"%> --%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="beans.ExistingReservation"%>
@@ -12,8 +12,8 @@
 <jsp:useBean id="dataManager" scope="application"
 	class="model.DataManager" />
 
-<jsp:setProperty property="*" name="account" />
-<jsp:setProperty property="*" name="reservations" />
+<%-- <jsp:setProperty property="*" name="account" /> --%>
+<%-- <jsp:setProperty property="*" name="reservations" /> --%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,32 +55,11 @@
 
 		<!-- MAIN SECTION START -->
 		<div class="main-section-div">
-			<div class="main-section-text">My Account Details</div>
-			<div>
+			
+			<div class="main-section-text">Reservation</div>
+			
 				<%
 				String custId = session.getAttribute("customerID").toString();
-				System.out.println("custId: " + custId);
-				account = dataManager.getAccountInfo(custId);
-				%>
-				<div class="white-box-2">
-					<div class="white-box-text">
-						<%=account.getFirstName() + " " + account.getLastName()%>
-					</div>
-				</div>
-				<div class="white-box-2">
-					<div class="white-box-text">
-						<%=account.getUsername()%>
-					</div>
-				</div>
-			</div>
-			<div class="white-box-1">
-				<div class="white-box-text">
-					TOTAL POINTS ACCRUED :
-					<%=account.getPoints()%>
-				</div>
-			</div>
-			<div class="main-section-text">My Reservations</div>
-				<%
 				boolean amenitiesSelected = false;
 				boolean firstPass = true;
 
@@ -96,7 +75,8 @@
 							<th>Total</th>
 						</tr>
 						<%
-					ArrayList<ExistingReservation> reservations = dataManager.getReservation(custId);
+					ArrayList<ExistingReservation> reservations = dataManager.getReservationByID(custId, request.getParameter("reservationID"));
+						System.out.println("reservations:" + reservations.size());
 					Iterator<ExistingReservation> iterator = reservations.iterator();
 					while (iterator.hasNext()) {
 						ExistingReservation reservation = (ExistingReservation) iterator.next();
@@ -112,6 +92,7 @@
 
 							</tr>
 							</table>
+							<div class="main-section-text">Amenities Selected</div>
 							<table>
 								<tr>
 									<th>Amenity</th>
