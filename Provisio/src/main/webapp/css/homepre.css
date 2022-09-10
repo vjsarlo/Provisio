@@ -749,6 +749,14 @@ body, html {
 Wasn't sure if we wanted to maintain a singular CSS or if we want to separate out based on page.*/
 
 /*myAccount.html*/
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 200px;
+}
 
 .my-account-div-header {
     background-color: transparent;
