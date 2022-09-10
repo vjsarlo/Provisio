@@ -45,3 +45,32 @@ function updateProgressbar() {
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+
+var the_data_obj = {};
+$(".user_change").change(function(){
+  var changed_field = $(this).attr("data-name");
+  var changed_field_val = $(this).val();
+  the_data_obj[changed_field] = changed_field_val;
+  $("#"+changed_field).val(changed_field_val); 
+  console.log(the_data_obj);
+});
+
+document.getElementById('result-destination-header').addEventListener("change", function () {
+  document.getElementById('choiceDestination').value = document.getElementById('result-destination-header').value;
+});
+
+function calculateDate() {
+  var startDate = document.getElementById("result-checkin").value;
+  var endDate = document.getElementById("result-checkout").value;
+  var Difference_In_Time = new Date(endDate).getTime() - new Date(startDate).getTime();
+  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  var roomPrice = $('#result-room option:selected').attr('room-price');
+
+  var totalCost = roomPrice * Difference_In_Days;
+  document.getElementById("stayLength").value = Difference_In_Days;
+  document.getElementById("stayPrice").value = totalCost;
+} 
+
+
+

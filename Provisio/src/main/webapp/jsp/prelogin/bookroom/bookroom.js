@@ -13,14 +13,23 @@ if ( null !== params.get("check") ) { // if found
         document.getElementById('result-destination-header').value = destination;
         document.getElementById('result-destination').value = destination;
         document.getElementById('result-checkin').value = checkin;
+        document.getElementById('choiceCheckin').value = checkin;
         document.getElementById('result-checkout').value = checkout;
+        document.getElementById('choiceCheckout').value = checkout;
 
-        if (destination == 1) {
-            document.getElementById('main-photo').src = "../../Photos/LasVegas.jpeg";
-        } else if (destination == 2) {
-            document.getElementById('main-photo').src = "../../Photos/Seattle.jpeg";
+        if (destination == "LasVegas") {
+            document.getElementById('main-photo').src = "/Provisio/images/Photos/LasVegas.jpeg";
+            $("#attractionDetails div").hide();
+            $("#showAttraction" + destination).show();
+            document.getElementById('choiceDestination').value = destination;
+
+        } else if (destination == "Seattle") {
+            document.getElementById('main-photo').src = "/Provisio/images/Photos/Seattle.jpeg";
+            $("#attractionDetails div").hide();
+            $("#showAttraction" + destination).show();
+            document.getElementById('choiceDestination').value = destination;
         } else {
-            document.getElementById('main-photo').src = "../../Photos/MainPhoto.jpeg";
+            document.getElementById('main-photo').src = "/Provisio/images/Photos/MainPhoto.jpeg";
         }
 
     })

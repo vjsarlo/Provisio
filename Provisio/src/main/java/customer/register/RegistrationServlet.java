@@ -24,15 +24,15 @@ public class RegistrationServlet extends HttpServlet
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Provisio", "root", "Qexeoymp4123!");
-            final PreparedStatement pst = con.prepareStatement("INSERT INTO customers(firstname, lastname, email, password) values( ?, ?, ?, ?) ");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/provisio", "root", "Qexeoymp4123!");
+            final PreparedStatement pst = con.prepareStatement("INSERT INTO customer(firstname, lastname, email, password) values( ?, ?, ?, ?) ");
             pst.setString(1, firstname);
             pst.setString(2, lastname);
             pst.setString(3, email);
             pst.setString(4, password);
             
             pst.executeUpdate();
-            response.sendRedirect("/Provisio/jsp/index.jsp");
+            response.sendRedirect("/Provisio/jsp/loginpages/login.jsp");
         }
         catch (Exception e) {
             e.printStackTrace();

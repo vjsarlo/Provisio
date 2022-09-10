@@ -7,6 +7,6 @@
 <title>Registered Worked</title>
 </head>
 <body>
-	<h1> Registered Successfully! </h1>
+	<h1> Success! </h1>
 </body>
 </html>

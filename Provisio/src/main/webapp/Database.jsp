@@ -21,29 +21,29 @@ populates the table with data.
 	<%  
             Connection connection = null;
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Provisio", "root", "Qexeoymp4123!");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/provisio", "root", "Qexeoymp4123!");
 
                 Statement statement = connection.createStatement();
                 
-                String command = "CREATE TABLE customers" +
-                "(cust_id int(11) NOT NULL AUTO_INCREMENT, firstName varchar(70) NOT NULL, lastName varchar(70) NOT NULL, " + 
+                String command = "CREATE TABLE customer" +
+                "(cust_id int(11) NOT NULL AUTO_INCREMENT, firstname varchar(70) NOT NULL, lastname varchar(70) NOT NULL, " + 
         				"email varchar(70) NOT NULL, password varchar(70) NOT NULL, PRIMARY KEY (cust_id))";
                          
                 statement.executeUpdate(command);
 
-                String command2 = "INSERT INTO customers(cust_id, firstName, lastname, email, password) "
+                String command2 = "INSERT INTO customer(cust_id, firstName, lastname, email, password) "
                 	    +"Values(1, 'Bill', 'Nye', 'billnyethescienceguy@test.com', 'billnyeismyname')";
                 statement.executeUpdate(command2);
 
-                String command3 = "INSERT INTO customers(cust_id, firstName, lastname, email, password) "
+                String command3 = "INSERT INTO customer(cust_id, firstName, lastname, email, password) "
                 	    +"Values(2, 'Bilbo', 'Baggins', 'theoriginalringbearer@test.com', 'theshire')";
                 statement.executeUpdate(command3);
 
                 ResultSet resultset = 
-                    statement.executeQuery("select * from customers");
+                    statement.executeQuery("select * from customer");
 
              while(resultset.next()){ 
-            %>
+    %>
             
 	<TABLE BORDER="1">
                     <TR>

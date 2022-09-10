@@ -27,7 +27,7 @@
         <a class="about-us-link-header header-links-style" href="./PreLogin/aboutpage.html">About Us</a>
         <a class="locations-link-header header-links-style" href="./PreLogin/locationspage.html">Locations</a>       
         <a class="contact-us-link-header header-links-style" href="./PreLogin/contactpage.html">Contact Us</a>
-        <a class="rooms-link-header header-links-style" href="./PreLogin/roomspage.html">Rooms</a>
+        <a class="rooms-link-header header-links-style" href="/Provisio/jsp/prelogin/bookroom/bookroom.jsp">Book</a>
         <!-- Login/Register Drop Down Header -->
         <div class="login-register-div-header">
           <ul class="menu">
@@ -48,10 +48,10 @@
           <form action="/Provisio/jsp/prelogin/bookroom/bookroom.jsp?check" method="POST" class="form" id="form">
             <!-- Destination Choice -->
             <div class="destination-div">
-              <select class="destination-choice" id="destination" name="destination" onchange="renderImage()">
-                <option value="0" disabled selected hidden>Choose Destination</option>
-                <option value="1">Las Vegas</option>
-                <option value="2">Seattle</option>
+              <select class="destination-choice" id="destination" name="destination">
+                <option value="Choose Destination" disabled selected hidden>Choose Destination</option>
+                <option value="LasVegas">LasVegas</option>
+                <option value="Seattle">Seattle</option>
               </select>
             </div>
             <!-- Check In Choice -->
