@@ -20,8 +20,8 @@ public class DatabaseBean implements java.io.Serializable {
 	public java.sql.ResultSet getResults(String SQL) throws ClassNotFoundException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/core?";
-			String fullUrl = url + "user=admin&password=pass";
+			String url = "jdbc:mysql://localhost:3306/provisio";
+			String fullUrl = url + "user=root&password=Qexeoymp4123!";
 			System.out.println(fullUrl);
 
 			connection = java.sql.DriverManager.getConnection(fullUrl);
@@ -39,8 +39,8 @@ public class DatabaseBean implements java.io.Serializable {
 	public void executeSQL(String SQL) throws ClassNotFoundException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/core?";
-			String fullUrl = url + "user=admin&password=pass";
+			String url = "jdbc:mysql://localhost:3306/provisio";
+			String fullUrl = url + "user=root&password=Qexeoymp4123!";
 			System.out.println(fullUrl);
 
 			connection = java.sql.DriverManager.getConnection(fullUrl);

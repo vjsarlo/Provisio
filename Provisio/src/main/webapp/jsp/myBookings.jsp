@@ -1,3 +1,19 @@
+<%-- <%@page import="model.AccountLookup"%> --%>
+<%-- <%@page import="beans.Account"%> --%>
+<%-- <%@page import="beans.LoginDao"%> --%>
+<%-- <%@page import="java.util.ArrayList"%> --%>
+<%-- <%@page import="java.util.Iterator"%> --%>
+<%-- <%@page import="beans.ExistingReservation"%> --%>
+
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<jsp:useBean id="account" class="beans.Account" />
+<jsp:useBean id="dataManager" scope="application"
+	class="model.DataManager" />
+
+<jsp:setProperty property="*" name="account" />
+<jsp:setProperty property="*" name="reservations" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +25,11 @@
 	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="/Provisio/css/homepre.css">
-<title>Load Up Page</title>
-<script type="text/javascript" src="index.js"></script>
+<title>My Bookings</title>
+
 </head>
 
 <body style="background-color: #d9d9d9;">
-
 	<!-- CONTAINER DIV START -->
 	<div class="container">
 		<!-- HEADER (Pre-Login) START -->
@@ -27,21 +42,34 @@
 		} else {
 		%>
 		<%@include file="header_post.jsp"%>
-		<%}%>
+		<%
+		}
+
+		// 		System.out.println("In myAccount.jsp customerID: "+ customerID);
+		%>
 		<!-- MAIN PHOTO START -->
 		<div class="main-photo-div">
 			<img class="main-photo" src="/Provisio/images/Photos/MainPhoto.jpeg" />
 		</div>
 		<!-- MAIN PHOTO END -->
 
-
 		<!-- MAIN SECTION START -->
+		
 		<div class="main-section-div">
-			<div class="main-section-text">Pack Your Luggage, Not Your
-				Worries. We'll Handle Everything You Need!</div>
-			<div class="main-section-login-button-div">
-				<a class="login-button-main login-button-style"
-					href="./PreLogin/loginpage.html">Login</a>
+			<div class="main-section-text">My Bookings</div>
+			<div class="reservation-id">
+				<div class="white-box-text">
+					
+					<form action="loadReservation.jsp" method="post">
+					  <label for="fname">Reservation ID:</label>
+					  <input type="text" id="reservationID" name="reservationID"><br><br>
+					  <input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+			<div class="main-section-text">My Reservation</div>
+			<div>
+			
 			</div>
 		</div>
 		<!-- MAIN SECTION END-->
@@ -59,7 +87,9 @@
 		} else {
 		%>
 		<%@include file="footer_post.jsp"%>
-		<%}%>
+		<%
+		}
+		%>
 
 	</div>
 	<!-- CONTAINER DIV END -->

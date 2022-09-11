@@ -1,19 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
-    <%@page import="beans.LoginDao"%>  
-<jsp:useBean id="obj" class= "beans.LoginBean"/>  
-  
-<jsp:setProperty property="*" name="obj"/>  
-  
-<%  
-	boolean status=LoginDao.validate(obj);  
-	if(status){  
-		out.println("Success!");  
-		session.setAttribute("session","TRUE");  
-	} else {  
-		out.print("Sorry, email or password error");  
-%>  
-<jsp:include page="../index.jsp"></jsp:include>  
-<%  
-}  
-%>  
+	pageEncoding="UTF-8"%>
+<%@page import="beans.LoginDao"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="obj" class="beans.LoginBean" />
+
+<jsp:setProperty property="*" name="obj" />
+
+<%
+System.out.println("In loginprocess.jsp");
+// System.out.println("EMAIL" + obj.getEmail());
+// System.out.println("ID GUEST" + obj.getIdGuest());
+boolean status = LoginDao.validate(obj);
+// System.out.println(status);
+
+if (status) {
+	session.setAttribute("session", "TRUE");
+ 	session.setAttribute("customerID", obj.getIdGuest());
+
+	System.out.println("Customer ID in loginprocess.jsp: "  + obj.getIdGuest());
+	System.out.println("Customer ID in session "  + session.getAttribute("customerID"));
+	
+} else {
+	session.setAttribute("session", "FALSE");
+
+}
+response.sendRedirect("/Provisio/jsp/index.jsp");
+
+%>

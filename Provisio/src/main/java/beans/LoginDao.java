@@ -16,40 +16,37 @@ public class LoginDao {
 		java.sql.ResultSet resultSet = null;
 		java.sql.Connection con = null;
 		java.sql.PreparedStatement ps = null;
-		System.out.println("In Login Dao");
+		System.out.println("**In Login Dao**");
 
 		try {
 			con = ConnectionProvider.getCon();
-			System.out.println("Connection: "+ con);
+//			System.out.println("Connection: "+ con);
 
 			ps = con.prepareStatement("select * from guest where username=? and password=?");
-			System.out.println("PS: "+ ps);
-
+//			System.out.println("PS: "+ ps);
+			
+//			System.out.println("beanid: "+ bean.getIdGuest());
 			String salt = bean.getSalt(bean.getEmail());
-			System.out.println("salt: "+ salt);
+//			System.out.println("salt: "+ salt);
 
 			byte[] byteSalt = fromHex(salt);
-			System.out.println(byteSalt);
+//			System.out.println(byteSalt);
 
 			String securePassword = toHex(getSaltedHash(bean.getPassword(), byteSalt));
-			System.out.println(securePassword);
+//			System.out.println("Securepass: " +securePassword);
 
 			ps.setString(1, bean.getEmail().strip());
 			ps.setString(2, securePassword);
-			System.out.println(ps);
+//			System.out.println("PS: " +ps);
 
 			resultSet = ps.executeQuery();
 
-			System.out.println();
 			while(resultSet.next()) {
-				salt = resultSet.getString(1);
-				System.out.println(salt);
-
+				bean.setIdGuest(resultSet.getInt(1));
+				System.out.println("ID GUEST:" + bean.getIdGuest());
 			}
-			
-			ResultSet rs = ps.executeQuery();
-			status = rs.next();
-			System.out.println(status);
+//			System.out.println("LoginDao get Customer ID: "+bean.getIdGuest());
+			status = (bean.getIdGuest() != null);
 
 		} catch (Exception e) {
 		} finally {
@@ -68,13 +65,13 @@ public class LoginDao {
 	}
 
 	public static byte[] getSaltedHash(String password, byte[] salt) {
-		System.out.println("Password: "+password);
-		System.out.println("Salt: "+salt);
+//		System.out.println("Password: "+password);
+//		System.out.println("Salt: "+salt);
 		try {
 			KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
-			System.out.println("Spec " +spec);
+//			System.out.println("Spec " +spec);
 			SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-			System.out.println("getSaltedHas return: "+factory.generateSecret(spec).getEncoded());
+//			System.out.println("getSaltedHash return: "+factory.generateSecret(spec).getEncoded());
 			return factory.generateSecret(spec).getEncoded();
 
 		} catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
