@@ -14,6 +14,7 @@
 </head>
 
 <body style="background-color: #d9d9d9;">
+
 	<!-- CONTAINER DIV START -->
 	<div class="container">
 		<!-- HEADER (Pre-Login) START -->
@@ -32,6 +33,7 @@
 			<img class="main-photo" src="/Provisio/images/Photos/MainPhoto.jpeg" />
 		</div>
 		<!-- MAIN PHOTO END -->
+
 
 		<!-- MAIN SECTION START -->
 		<div class="main-section-div">

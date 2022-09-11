@@ -424,32 +424,74 @@
   display: flex;
   flex-flow: column;
 }
-
+#displayTitles {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
 #roomDisplay {
   margin-top: 10px;
+  width: fit-content;
   font-size: var(--font-size-24);
-  text-align: left;
   color: var(--highlight-yellow);
   font-family: var(--font-family-ubuntu);
   font-weight: 400;
+}
+#attractionsDisplay {
+  margin-top: 10px;
+  width: fit-content;
+  margin-right: 20px;
+  font-size: var(--font-size-24);
+  color: var(--highlight-yellow);
+  font-family: var(--font-family-ubuntu);
+  font-weight: 400;
+}
+#detailsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#roomDetails{
+  width:fit-content;
+}
+#attractionDetails {
+  width:fit-content;
+}
+.showAttractionDetails {
+  background-color: var(--background-grey);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 350px;
+  height: 400px;
+  border-width: 5px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
 }
 .showRoomDetails {
   background-color: var(--background-grey);
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-top: 100px;
-  margin-left: 125px;
-  width: 400px;
-  height: 300px;
-  border-width: 10px;
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 250px;
+  height: 200px;
+  border-width: 5px;
   border-radius: 20px;
   border-style: solid;
   border-color: var(--highlight-yellow);
 }
-.roomName {
+.roomName,
+.attractionName {
   margin-top: 10px;
-  font-size: var(--font-size-36);
+  font-size: var(--font-size-24);
   text-align: center;
   color: var(--text-color);
   font-family: var(--font-family-ubuntu);
@@ -457,7 +499,7 @@
 }
 #roomPrice {
   margin-top: 10px;
-  font-size: var(--font-size-30);
+  font-size: var(--font-size-24);
   text-align: center;
   color: var(--text-color);
   font-family: var(--font-family-ubuntu);
@@ -569,7 +611,7 @@
 
 .main-content-div {
   background-color: var(--background-blue);
-  height: 500px;
+  height: 800px;
   left: 200px;
   position: absolute;
   top: 1190px;
@@ -605,7 +647,7 @@
 }
 
 .progress {
-  background-color: var(--primary-color);
+  background-color: var(--highlight-yellow);
   width: 0%;
   transition: 0.3s;
 }
@@ -644,7 +686,11 @@
   transform-origin: top;
   animation: animate .5s;
 }
-label {
+label,
+p,
+span,
+th,
+td {
   color: var(--wei);
 }
 .form-step-active {
@@ -653,6 +699,11 @@ label {
 
 .input-group {
   margin: 2rem 0;
+}
+
+#finalTable td, #finalTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 @keyframes animate {
@@ -720,7 +771,7 @@ label {
   height: 200px;
   left: 0px;
   position: absolute;
-  top: 1700px;
+  top: 2000px;
   width: 100%;
 }
 
