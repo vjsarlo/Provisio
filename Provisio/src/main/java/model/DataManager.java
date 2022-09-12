@@ -3,11 +3,14 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import beans.Account;
 import beans.ExistingReservation;
+import beans.Guest;
 
 public class DataManager {
 	private String dbURL = "";
@@ -45,8 +48,8 @@ public class DataManager {
 			String url = "jdbc:mysql://localhost:3306/provisio";
 			String user = "root";
 			String pass = "Qexeoymp4123!";
-			conn = DriverManager.getConnection(url,user, pass);
-				 
+			conn = DriverManager.getConnection(url, user, pass);
+
 		} catch (SQLException e) {
 			System.out.println("Could not connect to DB: " + e.getMessage());
 		} catch (ClassNotFoundException e) {
@@ -64,18 +67,60 @@ public class DataManager {
 			}
 		}
 	}
-	 public ArrayList<ExistingReservation> getReservation(String customerID) {
-		    return ReservationLookup.searchReservation(this, customerID);
-		    }
-	 
-	 public ArrayList<ExistingReservation> getReservationByID(String customerID, String reservationID) {
-		 	System.out.println("IN DATA MANAGER getReservationByID()");
-		    return ReservationLookup.searchReservationByID(this, customerID, reservationID);
-		    }
 
-	 public Account getAccountInfo(String customerID) {
-		 	System.out.println("IN DATA MANAGER");
-		    return AccountLookup.getAccountInfo(this, customerID);
-		    }
-	 
+	public ArrayList<ExistingReservation> getReservation(String customerID) {
+		return ReservationLookup.searchReservation(this, customerID);
+	}
+
+	public ArrayList<ExistingReservation> getReservationByID(String customerID, String reservationID) {
+		System.out.println("IN DATA MANAGER getReservationByID()");
+		return ReservationLookup.searchReservationByID(this, customerID, reservationID);
+	}
+
+	public Account getAccountInfo(String customerID) {
+		System.out.println("IN DATA MANAGER");
+		return AccountLookup.getAccountInfo(this, customerID);
+	}
+
+	public Guest getGuest(String customerID) {
+		System.out.println("IN DATA MANAGER");
+		return GuestLookup.getGuest(this, customerID);
+	}
+
+	public ResultSet getResults(String SQL) throws ClassNotFoundException {
+		Connection conn = null;
+	    Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+			
+			conn  = getConnection();
+			statement = conn.createStatement();
+		} catch (java.sql.SQLException e) {
+		}
+		try {
+			resultSet = statement.executeQuery(SQL);
+		} catch (java.sql.SQLException e) {
+
+		}
+		return resultSet;
+
+	}
+
+	public void executeSQL(String SQL) throws ClassNotFoundException {
+		Connection conn = null;
+	    Statement statement = null;
+		ResultSet resultSet = null;
+		try {
+	
+			conn  = getConnection();
+			statement = conn.createStatement();
+		} catch (java.sql.SQLException e) {
+		}
+		try {
+			statement.executeUpdate(SQL);
+		} catch (java.sql.SQLException e) {
+
+		}
+
+	}
 }
