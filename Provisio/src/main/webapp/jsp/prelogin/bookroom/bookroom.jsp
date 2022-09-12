@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bookroom.css">
-    <title>Login Page</title>
+    <title>Book Reservation Page</title>
 </head>
 
 <body style="background-color: #d9d9d9;">

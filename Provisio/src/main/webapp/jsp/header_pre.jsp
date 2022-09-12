@@ -1,3 +1,4 @@
+<script type="text/javascript" src="index.js"></script>
  <div class="headerpre-login">
       <!-- Logo Header-->
       <div class="logo-div">
@@ -30,7 +31,7 @@
           <form action="/Provisio/jsp/prelogin/bookroom/bookroom.jsp?check" method="POST" class="form" id="form">
             <!-- Destination Choice -->
             <div class="destination-div">
-              <select class="destination-choice" id="destination" name="destination" onchange="renderImage()">
+              <select class="destination-choice" id="destination" name="destination" >
                 <option value="0" disabled selected hidden>Choose Destination</option>
                 <option value="1">Las Vegas</option>
                 <option value="2">Seattle</option>
@@ -39,12 +40,12 @@
             <!-- Check In Choice -->
             <div class="check-in-date-div">
               <label for="" class="input-label">Check In</label>
-              <input type="date" class="input" id="checkin-date" name="checkin-date" min="2022-09-01">
+              <input type="date" class="input" id="checkin-date" name="checkin-date" min="2022-09-11">
             </div>
             <!-- Check Out Choice -->
             <div class="check-out-date-div">
               <label for="" class="input-label">Check Out</label>
-              <input type="date" class="input" id="checkout-date" name="checkout-date" min="2022-09-01">
+              <input type="date" class="input" id="checkout-date" name="checkout-date" min="2022-09-11">
             </div>
             <!-- Check Button -->
             <div class="check-button-div">
