@@ -1,6 +1,9 @@
 package beans;
 
+import java.sql.Connection;
 import java.sql.SQLException;
+
+import model.DataManager;
 
 public class LoginBean {
 	private String email, password, salt;
@@ -17,17 +20,13 @@ public class LoginBean {
 	}
 
 	public String getSalt(String email) throws SQLException, ClassNotFoundException {
-		java.sql.Connection connection = null;
 		java.sql.PreparedStatement statement = null;
 		java.sql.ResultSet resultSet = null;
 		System.out.println("In getSalt() email: "+ email);
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/provisio";
-			String user = "root";
-			String pass = "Qexeoymp4123!";
-			connection = java.sql.DriverManager.getConnection(url,user, pass);
+			DataManager dataManager = new DataManager();
+			Connection connection = dataManager.getConnection();
 //			System.out.println("In getSalt() connection: "+connection);
 			statement = connection.prepareStatement("select salt from guestsalt where trim(username)=? "); 
 			statement.setString(1,email.strip()); 
@@ -45,7 +44,6 @@ public class LoginBean {
 		} catch (java.sql.SQLException e) {
 			System.out.println("error");
 		} finally {
-			connection.close();
 			resultSet.close();
 			statement.close();
 		}
