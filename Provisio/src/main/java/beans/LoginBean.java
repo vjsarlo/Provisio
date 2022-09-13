@@ -35,7 +35,7 @@ public class LoginBean {
 			
 			while(resultSet.next()) {
 				salt = resultSet.getString(1);
-//				System.out.println("salt in resultset: "+salt);
+				System.out.println("salt in resultset: "+salt);
 			}
 			resultSet.close();
 			statement.close();

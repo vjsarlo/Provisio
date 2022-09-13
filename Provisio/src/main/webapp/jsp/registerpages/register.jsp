@@ -176,7 +176,7 @@
 	                         Welcome To Our Family!<br> We Can't Wait To Meet You!
 	                     </h2> 
                     	<form method="post" action="${pageContext.request.contextPath}/register" class="register-form" id="register-form">
-
+							<span style="color:red">${messages.message}</span>	
 	                        <fieldset>
 	                            <div class="input-container ic1">
 							        <input id="firstname" class="input" type="text" placeholder=" " value="" name="firstname" required="required"/>
@@ -208,7 +208,8 @@
 							        <label for="password" class="placeholder">Password</label>
 							    </div>
 	                        </fieldset>
-	                       
+	                        
+ 									                       
 	                        <button type="submit" class="submit">Register!</button>
                         </form>
                     </div>                  

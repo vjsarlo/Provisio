@@ -43,22 +43,21 @@ public class NewGuest {
 		String saltQuery = "Insert into guestsalt (username,salt) values('"+
 				guest.getUsername() + "', '"+	
 				hexedsalt + "')";
-		
 		// now, create the hashed password
 		String securePassword = toHex(getSaltedHash(guest.getPassword(),byteSalt));  //store this as pass
 		
 		// insert new customer into database
-		String query = "Call addUser(" +
+		String query = "Insert into guest (username, password, firstname, lastname, points) values('" +
 				
 				guest.getUsername() + "', '"+		 
 				securePassword + "', '" + 
 				guest.getFirstName() + "', '" +
-				guest.getLastName() + "', '" +
-				 "')";
+				guest.getLastName() + "', 0)";
 		try {
-			
-			dataManager.executeSQL(saltQuery);
+		
 			dataManager.executeSQL(query);
+			dataManager.executeSQL(saltQuery);
+
 		} catch (ClassNotFoundException e) { 
 			e.printStackTrace();
 		}
