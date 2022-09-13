@@ -849,6 +849,43 @@ Wasn't sure if we wanted to maintain a singular CSS or if we want to separate ou
   }
 
   /*End of ReservationLookUp.html */
+ 
+ /* ABOUT US SECTION START */
+#about-us-div {
+  background-color: var(--background-blue);
+  height: 95%;
+  width: 100%;
+  padding: 3em;
+  left: 60px;
+  position: relative;
+  top: 650px;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--background-blue);
+  display: block;
+  text-align: center;
+}
 
+.quarter {
+	position: absolute;
+	width:50%;
+	height:50%;
+}
+
+.about-us-text {
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-36);
+  font-weight: 400;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+ /* ABOUT US SECTION END */
 
 

@@ -1,6 +1,9 @@
 package customer.register;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,9 +38,8 @@ public class RegistrationServlet extends HttpServlet {
 		
 	
 		if (newGuest.create(guest) == -1) {
-			throw new ServletException("User already exists.");
+//	
 		};
-		
 
 	}
 }
