@@ -111,14 +111,16 @@ public class DataManager {
 	    Statement statement = null;
 		ResultSet resultSet = null;
 		try {
-	
 			conn  = getConnection();
 			statement = conn.createStatement();
 		} catch (java.sql.SQLException e) {
 		}
 		try {
 			statement.executeUpdate(SQL);
+			System.out.println("Statement run: "+ SQL );
 		} catch (java.sql.SQLException e) {
+			System.out.println("Statement NOT run: "+ SQL );
+			System.out.println("Exception: "+e);
 
 		}
 
