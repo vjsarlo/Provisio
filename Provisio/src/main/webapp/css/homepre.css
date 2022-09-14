@@ -68,7 +68,7 @@
 body, html {
   margin: 0px;
   height: 100%;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   width: 100%;
 }
 
@@ -357,6 +357,7 @@ body, html {
   border-color: var(--highlight-yellow);
   z-index: 1;
 }
+
 /* Destination Choice */
 .destination-div {
   background-color:  transparent;
