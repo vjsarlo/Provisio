@@ -1,5 +1,4 @@
-<script type="text/javascript" src="index.js"></script>
- <div class="headerpre-login">
+<div class="headerpre-login">
       <!-- Logo Header-->
       <div class="logo-div">
         <img class="logo" src="/Provisio/images/Logos/LargeLogo.png"/>
@@ -26,34 +25,34 @@
       </div>
       <!-- MAIN HEADER END -->
       <!-- SUB HEADER (CHECK AVAILABILITY) START -->
-      <div class="sub-header-div">
-        <div class="check-availability-div">
-          <form action="/Provisio/jsp/prelogin/bookroom/bookroom.jsp?check" method="POST" class="form" id="form">
-            <!-- Destination Choice -->
-            <div class="destination-div">
-              <select class="destination-choice" id="destination" name="destination" >
-                <option value="0" disabled selected hidden>Choose Destination</option>
-                <option value="1">Las Vegas</option>
-                <option value="2">Seattle</option>
-              </select>
-            </div>
-            <!-- Check In Choice -->
-            <div class="check-in-date-div">
-              <label for="" class="input-label">Check In</label>
-              <input type="date" class="input" id="checkin-date" name="checkin-date" min="2022-09-11">
-            </div>
-            <!-- Check Out Choice -->
-            <div class="check-out-date-div">
-              <label for="" class="input-label">Check Out</label>
-              <input type="date" class="input" id="checkout-date" name="checkout-date" min="2022-09-11">
-            </div>
-            <!-- Check Button -->
-            <div class="check-button-div">
-              <button type="submit" form="form" class="check-availability-button" onclick="checkAvailability()" >Check Availability</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- SUB HEADER END -->
-    </div>
-    <!-- HEADER (Pre-Login) END -->
+	  <div class="sub-header-div">
+	    <div class="check-availability-div">
+	      <form action="/Provisio/jsp/prelogin/bookroom/bookroom.jsp?check" method="POST" class="form" id="form">
+	      	<!-- Destination Choice -->
+	      	<div class="destination-div">
+		        <select class="destination-choice" id="destination" name="destination" required>
+		       		<option value="" disabled selected hidden>Choose Destination</option>
+		       		<option value="LasVegas">LasVegas</option>
+		        	<option value="Seattle">Seattle</option>
+		        </select>
+	        </div>
+	        <!-- Check In Choice -->
+	        <div class="check-in-date-div">
+	            <label for="" class="input-label">Check In</label>
+	        	<input type="date" class="input" id="checkin-date" name="checkin-date" min="2022-09-11" required>
+	        </div>
+	        <!-- Check Out Choice -->
+	        <div class="check-out-date-div">
+	            <label for="" class="input-label">Check Out</label>
+	            <input type="date" class="input" id="checkout-date" name="checkout-date" min="2022-09-11" required>
+	        </div>
+	        <!-- Check Button -->
+	        <div class="check-button-div">
+	            <button type="submit" form="form" class="check-availability-button" onclick="checkAvailability()" >Check Availability</button>
+	        </div>
+	      </form>
+	    </div>
+	  </div>
+	  <!-- SUB HEADER END -->  	      
+</div>
+<!-- HEADER (Pre-Login) END -->
