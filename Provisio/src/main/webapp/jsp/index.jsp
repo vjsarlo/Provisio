@@ -66,33 +66,29 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-
-		      $(document).ready(function() {
-		        var today = new Date().toISOString().split('T')[0];
-		        $("#checkin-date").attr('min', today);
-		        $("#checkout-date").attr('min', today);
-		        $("#checkin-date").change(function(){ 
-		          var checkout = $("#checkout-date").val();
-		          var checkoutCheck = new Date($("#checkout-date").val());       
-		          if (new Date($("#checkin-date").val()).getTime() >= new Date(checkoutCheck).getTime()) {
-		            var checkin = $("#checkin-date").val();
-		            $("#checkout-date").val(checkin);
-		            alert("The Check In Date Must Be Before Your Check Out Date!");          
-		          }
-		        });       
-		        $("#checkout-date").change(function() {
-		            var checkin = $("#checkin-date").val();
-		            var checkinCheck = new Date($("#checkin-date").val());
-		            if (new Date($("#checkout-date").val()).getTime() <= new Date(checkinCheck).getTime()) {
-		              $("#checkout-date").val(checkin);
-		              $('#check-availability-button').attr('disabled', true);
-		              alert("The Check Out Date Must Be After Your Check In Date!"); 
-		            } else if (new Date($("#checkout-date").val()).getTime() > new Date(checkinCheck).getTime()) {
-		              $('#check-availability-button').removeAttr('disabled');
-		            }
-		        });
-		      });
-	 </script>
+      $(document).ready(function() {
+        var today = new Date().toISOString().split('T')[0];
+        $("#checkin-date").attr('min', today);
+        //$("#checkout-date").attr('min', today);
+        $("#checkin-date").change(function(){
+          var checkInDate = $(this).val();
+          var split = checkInDate.split('-');
+          var nextDay = new Date(split[0], split[1]-1, parseInt(split[2])+1, 0,0,0,0);         
+          if (new Date(checkInDate).getTime() >= new Date($("#checkout-date").val()).getTime()){
+            $("#checkout-date")[0].valueAsDate = nextDay;
+          }
+          $("#checkout-date").attr('min', checkInDate);
+        });
+        $("#checkout-date").change(function(){
+          var checkOutDate = $(this).val();
+          var split = checkOutDate.split('-');
+          var dayBefore = new Date(split[0], split[1]-1, parseInt(split[2])-1, 0,0,0,0);
+          if (new Date($("#checkin-date").val()).getTime() >= new Date(checkOutDate).getTime()) {
+            $("#checkin-date")[0].valueAsDate = dayBefore;
+          }
+        });
+      });
+    </script>
 	
 	<!-- CONTAINER DIV END -->
 </body>

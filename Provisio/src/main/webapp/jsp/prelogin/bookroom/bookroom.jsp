@@ -264,59 +264,59 @@
             <table id="finalTable">
               <tr>
                 <th>Destination:</th>
-                <td><input readonly id="choiceDestination" name="choiceDestination"></td>
+                <td><input id="choiceDestination" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Room:</th>
-                <td><input readonly id="choiceRoom" name="choiceRoom"></td>
+                <td><input id="choiceRoom" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Price Per Night:</th>
-                <td><input readonly id="choiceRoomPrice" name="choiceRoomPrice"></td>
+                <td><input id="choiceRoomPrice" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Check-In Date:</th>
-                <td><input readonly id="choiceCheckin" name="choiceCheckin"></td>
+                <td><input id="choiceCheckin" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Check-Out Date:</th>
-                <td><input readonly id="choiceCheckout" name="choiceCheckout"></td>
+                <td><input id="choiceCheckout" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Total Nights:</th>
-                <td><input readonly id="stayLength" name="stayLength"></td>
+                <td><input id="stayLength" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Stay Price:</th>
-                <td><input readonly id="stayPrice" class="totalCostPiece" name="stayPrice"></td>
+                <td><input id="stayPrice" class="totalCostPiece readonly" required></td>
               </tr>
               <tr>
                 <th>Name:</th>
-                <td><input readonly id="choiceName" name="choiceName"></td>
+                <td><input id="choiceName" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Phone Number:</th>
-                <td><input readonly id="choicePhone" name="choicePhone"></td>
+                <td><input id="choicePhone" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Email:</th>
-                <td><input readonly id="choiceEmail" name="choiceEmail"></td>
+                <td><input id="choiceEmail" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Number Of Guests:</th>
-                <td><input readonly id="choiceGuests" name="choiceGuests"></td>
+                <td><input id="choiceGuests" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Amenities Chosen:</th>
-                <td><input readonly id="choiceAmenities" name="choiceAmenities"></td>
+                <td><input id="choiceAmenities" class="readonly" required></td>
               </tr>
               <tr>
                 <th>Amenities Cost:</th>
-                <td><input readonly id="choiceAmenitiesPrice" class="totalCostPiece" name="choiceAmenitiesPrice"></td>
+                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" required></td>
               </tr>
               <tr>
                 <th>Total:</th>
-                <td><input readonly id="totalCost" class="totalCost" name="totalCost"></td>
+                <td><input id="totalCost" class="totalCost readonly" required></td>
               </tr>
             </table>
           </div>
@@ -356,7 +356,32 @@
   <!-- CONTAINER DIV END -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    
+	  $(document).ready(function() {
+	      var today = new Date().toISOString().split('T')[0];
+	      $("#result-checkin").attr('min', today);
+	      //$("#checkout-date").attr('min', today);
+	      $("#result-checkin").change(function(){
+	        var checkInDate = $(this).val();
+	        var split = checkInDate.split('-');
+	        var nextDay = new Date(split[0], split[1]-1, parseInt(split[2])+1, 0,0,0,0);         
+	        if (new Date(checkInDate).getTime() >= new Date($("#result-checkout").val()).getTime()){
+	          $("#result-checkout")[0].valueAsDate = nextDay;
+	        }
+	        $("#result-checkout").attr('min', checkInDate);
+	      });
+	      $("#result-checkout").change(function(){
+	        var checkOutDate = $(this).val();
+	        var split = checkOutDate.split('-');
+	        var dayBefore = new Date(split[0], split[1]-1, parseInt(split[2])-1, 0,0,0,0);
+	        if (new Date($("#result-checkin").val()).getTime() >= new Date(checkOutDate).getTime()) {
+	          $("#result-checkin")[0].valueAsDate = dayBefore;
+	        }
+	      });
+	  });
+	  $(".readonly").on('keydown paste focus mousedown', function(e){
+	      if(e.keyCode != 9) // ignore tab
+	          e.preventDefault();
+	  });
     $('#result-destination-header, #result-destination').on('change', function(){
     	var value = $(this).val(); 
       $("div.main-photo-div").hide();
