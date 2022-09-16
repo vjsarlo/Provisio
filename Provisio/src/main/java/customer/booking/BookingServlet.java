@@ -2,9 +2,17 @@ package customer.booking;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Scanner;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,27 +43,41 @@ public class BookingServlet extends HttpServlet {
         final String amenities = request.getParameter("choiceAmenities");
         final String amenitiesprice = request.getParameter("choiceAmenitiesPrice");
         final String total = request.getParameter("totalCost");
+ 
 
         Connection con = null;
+		CallableStatement stmt = null;
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/provisio", "root", "Qexeoymp4123!");
-            final PreparedStatement pst = con.prepareStatement("INSERT INTO booking(guest, email, phone, hoteldestination, room, checkin, checkout, numberofnights, roomprice, stayprice, numberofguests, amenities, amenitiesprice, total) values( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
-            pst.setString(1, guest);
-            pst.setString(2, email);
-            pst.setString(3, phone);
-            pst.setString(4, hoteldestination);
-            pst.setString(5, room);
-            pst.setString(6, checkin);
-            pst.setString(7, checkout);
-            pst.setString(8, numberofnights);
-            pst.setString(9, roomprice);
-            pst.setString(10, stayprice);
-            pst.setString(11, numberofguests);
-            pst.setString(12, amenities);
-            pst.setString(13, amenitiesprice);
-            pst.setString(14, total);
+        	
+        	con = DBConnection.getConnection();
+			stmt = con.prepareCall("{call get_ids(?,?,?,?,?, ?)}");
+			stmt.setString(1, guest);
+			stmt.setString(3, hoteldestination);
+			stmt.setString(5, room);
+			
+			
+			//register the OUT parameter before calling the stored procedure
+			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
+			stmt.registerOutParameter(4, java.sql.Types.INTEGER);
+			stmt.registerOutParameter(6, java.sql.Types.INTEGER);
+			
+			stmt.execute();
+			
+			//read the OUT parameter now
+			int getguestid = stmt.getInt(2);
+			int gethotelid = stmt.getInt(3);
+			int getroomid = stmt.getInt(4);
+			
+            final PreparedStatement pst = con.prepareStatement("INSERT INTO reservation(idguest, guestName, idroom, idhotel, checkin, checkout, numberofguests, total) values( ?, ?, ?, ?, ?, ?, ?, ?) ");
+            pst.setInt(1, getguestid);
+            pst.setString(2, guest);
+            pst.setInt(3, getroomid);
+            pst.setInt(4, gethotelid);
+            pst.setDate(3, (Date)dateFormat.parse(checkin)); 
+            pst.setDate(4, (Date)dateFormat.parse(checkout)); 
+            pst.setString(7, numberofguests);
+            pst.setString(8, total);
             
             pst.executeUpdate();
             response.sendRedirect("/Provisio/jsp/testconnection.jsp");

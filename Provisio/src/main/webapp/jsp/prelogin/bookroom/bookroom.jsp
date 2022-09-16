@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +25,7 @@
       <div class="header-links">
         <a class="home-link-header header-links-style" href="../../index.html">Home</a>
         <a class="about-us-link-header header-links-style" href="aboutpage.html">About Us</a>
-        <a class="locations-link-header header-links-style" href="locationspage.html">Locations</a>       
+        <a class="locations-link-header header-links-style" href="locationspage.html">Locations</a>     
         <a class="contact-us-link-header header-links-style" href="contactpage.html">Contact Us</a>
         <a class="rooms-link-header header-links-style" href="roomspage.html">Rooms</a>
         <!-- Login/Register Drop Down Header -->
@@ -232,8 +233,11 @@
             <select class="user_change guestNumber select" id="guestNumber" data-name="choiceGuests" name="guestNumber">
             <!--<select class="guestNumber select" id="guestNumber" name="guestNumber"> -->
               <option value="0" disabled selected hidden>How Many Guests Are There?</option>
-              <option value="1-2">1-2</option>
-              <option value="3-5">3-5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
           <div class="input-group">
