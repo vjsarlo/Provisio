@@ -22,19 +22,18 @@
       </div>
       <!-- Header Links -->
       <div class="header-links">
-        <a class="home-link-header header-links-style" href="../../index.html">Home</a>
-        <a class="about-us-link-header header-links-style" href="aboutpage.html">About Us</a>
-        <a class="locations-link-header header-links-style" href="locationspage.html">Locations</a>       
-        <a class="contact-us-link-header header-links-style" href="contactpage.html">Contact Us</a>
-        <a class="rooms-link-header header-links-style" href="roomspage.html">Rooms</a>
+        <a class="home-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/index.jsp">Home</a>
+        <a class="about-us-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
+        <a class="locations-link-header header-links-style" href="locations.html">Locations</a>       
+        <a class="rooms-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/bookroom/bookroom.jsp">Rooms</a>
         <!-- Login/Register Drop Down Header -->
         <div class="login-register-div-header">
           <ul class="menu">
             <li class="login-register-list-header header-links-style">
               <a href="#">Login/Register </a>
               <ul class="submenu">
-                <li><a href="loginpage.html">Login</a></li>
-                <li><a href="registerpage.html">Register</a></li>
+                <li><a href="/Provisio/src/main/webapp/jsp/loginpages/login.jsp">Login</a></li>
+                <li><a href="/Provisio/src/main/webapp/jsp/prelogin/bookroom/bookroom.jsp/registerpages/register.jsp">Register</a></li>
               </ul>
             </li>
           </ul>
@@ -338,15 +337,14 @@
           <img class="footer-logo" src="/Provisio/images/Logos/SmallLogo.png" />
         </div>
         <!-- Footer Links -->
-        <a class="home-link-footer footer-links-style" href="../index.html">Home</a>
-        <a class="about-us-link-footer footer-links-style" href="aboutpage.html">About Us</a>
-        <a class="contact-us-link-footer footer-links-style" href="contactpage.html">Contact Us</a>
+        <a class="home-link-footer footer-links-style" href="/Provisio/src/main/webapp/jsp/index.jsp">Home</a>
+        <a class="about-us-link-footer footer-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
         <!-- Login Button Footer -->
         <div class="footer-text">
           Login To Book Your Vacation!
         </div>
         <div class="footer-login-button-div">
-          <a class="login-button-footer login-button-style" href="loginpage.html">Login</a>
+          <a class="login-button-footer login-button-style" href="/Provisio/src/main/webapp/jsp/loginpages/login.jsp">Login</a>
         </div>
       </div>
     </div>
