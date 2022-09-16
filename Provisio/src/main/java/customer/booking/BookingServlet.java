@@ -43,6 +43,8 @@ public class BookingServlet extends HttpServlet {
         final String amenities = request.getParameter("choiceAmenities");
         final String amenitiesprice = request.getParameter("choiceAmenitiesPrice");
         final String total = request.getParameter("totalCost");
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
  
 
         Connection con = null;
@@ -55,8 +57,7 @@ public class BookingServlet extends HttpServlet {
 			stmt.setString(1, guest);
 			stmt.setString(3, hoteldestination);
 			stmt.setString(5, room);
-			
-			
+						
 			//register the OUT parameter before calling the stored procedure
 			stmt.registerOutParameter(2, java.sql.Types.INTEGER);
 			stmt.registerOutParameter(4, java.sql.Types.INTEGER);
@@ -68,6 +69,10 @@ public class BookingServlet extends HttpServlet {
 			int getguestid = stmt.getInt(2);
 			int gethotelid = stmt.getInt(3);
 			int getroomid = stmt.getInt(4);
+			
+			if(guest == null || hoteldestination == null || room == null){
+					System.out.println("Error With pushing inputs");
+			}
 			
             final PreparedStatement pst = con.prepareStatement("INSERT INTO reservation(idguest, guestName, idroom, idhotel, checkin, checkout, numberofguests, total) values( ?, ?, ?, ?, ?, ?, ?, ?) ");
             pst.setInt(1, getguestid);
@@ -81,30 +86,15 @@ public class BookingServlet extends HttpServlet {
             
             pst.executeUpdate();
             response.sendRedirect("/Provisio/jsp/testconnection.jsp");
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            try {
-                con.close();
-            }
-            catch (SQLException e2) {
-                e2.printStackTrace();
-            }
-            return;
-        }
-        finally {
-            try {
-                con.close();
-            }
-            catch (SQLException e2) {
-                e2.printStackTrace();
-            }
-        }
-        try {
-            con.close();
-        }
-        catch (SQLException e2) {
-            e2.printStackTrace();
-        } 
-	}
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				try {
+					stmt.close();
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+	}		
 }
