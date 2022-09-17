@@ -67,8 +67,8 @@ public class BookingServlet extends HttpServlet {
 			
 			//read the OUT parameter now
 			int getguestid = stmt.getInt(2);
-			int gethotelid = stmt.getInt(3);
-			int getroomid = stmt.getInt(4);
+			int gethotelid = stmt.getInt(4);
+			int getroomid = stmt.getInt(6);
 			
 			if(guest == null || hoteldestination == null || room == null){
 					System.out.println("Error With pushing inputs");
@@ -79,8 +79,8 @@ public class BookingServlet extends HttpServlet {
             pst.setString(2, guest);
             pst.setInt(3, getroomid);
             pst.setInt(4, gethotelid);
-            pst.setDate(3, (Date)dateFormat.parse(checkin)); 
-            pst.setDate(4, (Date)dateFormat.parse(checkout)); 
+            pst.setDate(5, (Date)dateFormat.parse(checkin)); 
+            pst.setDate(6, (Date)dateFormat.parse(checkout)); 
             pst.setString(7, numberofguests);
             pst.setString(8, total);
             
