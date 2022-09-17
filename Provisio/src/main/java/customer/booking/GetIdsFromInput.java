@@ -21,8 +21,8 @@ public class GetIdsFromInput {
 					"jdbc:mysql://localhost:3306/provisio", "root", "Qexeoymp4123!");
 
 			String guestname = "Antonia Kiser";
-			String destinationchoice = "Seattle";
-			String roomchoice = "Double Queen Bed";
+			String destinationchoice = "LasVegas";
+			String roomchoice = "Queen Bed";
 			
 			// Prepare the stored procedure call
 			myStmt = myConn
