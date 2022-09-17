@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="bookroom.css">
+<link rel="stylesheet" href="/Provisio/css/bookroom.css">
     <div class="headerpre-login">
       <!-- Logo Header-->
       <div class="logo-div">
@@ -6,7 +6,7 @@
       </div>
       <!-- Header Links -->
       <div class="header-links">
-        <a class="home-link-header header-links-style" href="index.jsp">Home</a>
+        <a class="home-link-header header-links-style" href="/Provisio/jsp/index.jsp">Home</a>
         <a class="about-us-link-header header-links-style" href="/Provisio/jsp/prelogin/aboutpage.html">About Us</a>
         <a class="locations-link-header header-links-style" href="">Locations</a>       
         <a class="rooms-link-header header-links-style" href="">Rooms</a>
