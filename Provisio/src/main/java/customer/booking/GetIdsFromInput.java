@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 
+import javax.servlet.RequestDispatcher;
+
 
 public class GetIdsFromInput {
 

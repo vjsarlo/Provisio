@@ -14,7 +14,7 @@
 		<div class="footer-text">Login To Book Your Vacation!</div>
 		<div class="footer-login-button-div">
 			<a class="login-button-footer login-button-style"
-				href="./PreLogin/loginpage.html">Login</a>
+				href="/Provisio/jsp/loginpages/login.jsp">Login</a>
 		</div>
 	</div>
 </div>

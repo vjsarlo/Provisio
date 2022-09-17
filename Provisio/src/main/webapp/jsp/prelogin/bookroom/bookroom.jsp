@@ -12,55 +12,21 @@
 </head>
 
 <body style="background-color: #d9d9d9;">
+
   <!-- CONTAINER DIV START -->
   <div class="container">
-    <!-- HEADER (Pre-Login) START -->
-    <!-- MAIN HEADER START -->
-    <div class="headerpre-login">
-      <!-- Logo Header-->
-      <div class="logo-div">
-        <img class="logo" src="/Provisio/images/Logos/LargeLogo.png"/>
-      </div>
-      <!-- Header Links -->
-      <div class="header-links">
-        <a class="home-link-header header-links-style" href="../../index.html">Home</a>
-        <a class="about-us-link-header header-links-style" href="aboutpage.html">About Us</a>
-        <a class="locations-link-header header-links-style" href="locationspage.html">Locations</a>     
-        <a class="contact-us-link-header header-links-style" href="contactpage.html">Contact Us</a>
-        <a class="rooms-link-header header-links-style" href="roomspage.html">Rooms</a>
-        <!-- Login/Register Drop Down Header -->
-        <div class="login-register-div-header">
-          <ul class="menu">
-            <li class="login-register-list-header header-links-style">
-              <a href="#">Login/Register </a>
-              <ul class="submenu">
-                <li><a href="loginpage.html">Login</a></li>
-                <li><a href="registerpage.html">Register</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- MAIN HEADER END -->
-      <!-- SUB HEADER (CHECK AVAILABILITY) START -->
-      <div class="sub-header-div">
-        <div class="check-availability-div">
-          <select class="sub-header-text select" id="result-destination-header">
-            <option value="Choose Destination" disabled selected hidden>Choose Destination</option>
-            <option value="LasVegas">LasVegas</option>
-            <option value="Seattle">Seattle</option>
-          </select>
-          <script>
-            document.getElementById('result-destination-header').addEventListener("change", function () {
-              document.getElementById('result-destination').selectedIndex = document.getElementById('result-destination-header').selectedIndex;
-            }, false);
-          </script>
-        </div>
-      </div>
-      <!-- SUB HEADER END -->
-    </div>
-    <!-- HEADER (Pre-Login) END -->
-    
+		<!-- HEADER (Pre-Login) START -->
+		<!-- MAIN HEADER START -->
+		<%
+		if (session.getAttribute("session") != "TRUE") {
+		%>
+		<%@include file="header_pre_book.jsp"%>
+		<%
+		} else {
+		%>
+		<%@include file="header_post_book.jsp"%>
+		<%}%>
+
     <!-- MAIN PHOTO START -->
     <div id="showLasVegas" class="main-photo-div">
       <img src="/Provisio/images/Photos/LasVegas.jpeg" class="main-photo" />

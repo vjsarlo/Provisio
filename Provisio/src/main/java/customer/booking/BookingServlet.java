@@ -44,9 +44,6 @@ public class BookingServlet extends HttpServlet {
         final String amenitiesprice = request.getParameter("choiceAmenitiesPrice");
         final String total = request.getParameter("totalCost");
         
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
- 
-
         Connection con = null;
 		CallableStatement stmt = null;
         
@@ -70,17 +67,16 @@ public class BookingServlet extends HttpServlet {
 			int gethotelid = stmt.getInt(4);
 			int getroomid = stmt.getInt(6);
 			
-			if(guest == null || hoteldestination == null || room == null){
-					System.out.println("Error With pushing inputs");
-			}
+			Date datefmtCheckIn = Date.valueOf(checkin);
+            Date datefmtCheckOut = Date.valueOf(checkout);
 			
             final PreparedStatement pst = con.prepareStatement("INSERT INTO reservation(idguest, guestName, idroom, idhotel, checkin, checkout, numberofguests, total) values( ?, ?, ?, ?, ?, ?, ?, ?) ");
             pst.setInt(1, getguestid);
             pst.setString(2, guest);
             pst.setInt(3, getroomid);
             pst.setInt(4, gethotelid);
-            pst.setDate(5, (Date)dateFormat.parse(checkin)); 
-            pst.setDate(6, (Date)dateFormat.parse(checkout)); 
+            pst.setDate(5, datefmtCheckIn); 
+            pst.setDate(6, datefmtCheckOut);
             pst.setString(7, numberofguests);
             pst.setString(8, total);
             
