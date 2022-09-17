@@ -268,59 +268,59 @@
             <table id="finalTable">
               <tr>
                 <th>Destination:</th>
-                <td><input id="choiceDestination" class="readonly" required></td>
+                <td><input id="choiceDestination" class="readonly" name="choiceDestination" required></td>
               </tr>
               <tr>
                 <th>Room:</th>
-                <td><input id="choiceRoom" class="readonly" required></td>
+                <td><input id="choiceRoom" class="readonly" name="choiceRoom" required></td>
               </tr>
               <tr>
                 <th>Price Per Night:</th>
-                <td><input id="choiceRoomPrice" class="readonly" required></td>
+                <td><input id="choiceRoomPrice" class="readonly" name="choiceRoomPrice" required></td>
               </tr>
               <tr>
                 <th>Check-In Date:</th>
-                <td><input id="choiceCheckin" class="readonly" required></td>
+                <td><input id="choiceCheckin" class="readonly" name="choiceCheckin" required></td>
               </tr>
               <tr>
                 <th>Check-Out Date:</th>
-                <td><input id="choiceCheckout" class="readonly" required></td>
+                <td><input id="choiceCheckout" class="readonly" name="choiceCheckout" required></td>
               </tr>
               <tr>
                 <th>Total Nights:</th>
-                <td><input id="stayLength" class="readonly" required></td>
+                <td><input id="stayLength" class="readonly" name="stayLength" required></td>
               </tr>
               <tr>
                 <th>Stay Price:</th>
-                <td><input id="stayPrice" class="totalCostPiece readonly" required></td>
+                <td><input id="stayPrice" class="totalCostPiece readonly" name="stayPrice" required></td>
               </tr>
               <tr>
                 <th>Name:</th>
-                <td><input id="choiceName" class="readonly" required></td>
+                <td><input id="choiceName" class="readonly" name="choiceName" required></td>
               </tr>
               <tr>
                 <th>Phone Number:</th>
-                <td><input id="choicePhone" class="readonly" required></td>
+                <td><input id="choicePhone" class="readonly" name="choicePhone" required></td>
               </tr>
               <tr>
                 <th>Email:</th>
-                <td><input id="choiceEmail" class="readonly" required></td>
+                <td><input id="choiceEmail" class="readonly" name="choiceEmail" required></td>
               </tr>
               <tr>
                 <th>Number Of Guests:</th>
-                <td><input id="choiceGuests" class="readonly" required></td>
+                <td><input id="choiceGuests" class="readonly" name="choiceGuests" required></td>
               </tr>
               <tr>
                 <th>Amenities Chosen:</th>
-                <td><input id="choiceAmenities" class="readonly" required></td>
+                <td><input id="choiceAmenities" class="readonly" name="choiceAmenities" required></td>
               </tr>
               <tr>
                 <th>Amenities Cost:</th>
-                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" required></td>
+                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" name="choiceAmenitiesPrice" required></td>
               </tr>
               <tr>
                 <th>Total:</th>
-                <td><input id="totalCost" class="totalCost readonly" required></td>
+                <td><input id="totalCost" class="totalCost readonly" name="totalCost" required></td>
               </tr>
             </table>
           </div>
