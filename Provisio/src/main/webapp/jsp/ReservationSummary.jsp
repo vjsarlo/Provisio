@@ -7,9 +7,7 @@
 <%@page import="java.util.Iterator"%>
 <jsp:useBean id="dataManager" scope="application"
 	class="model.DataManager" />
-<%
-String base = (String) application.getAttribute("base");
-%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -18,11 +16,8 @@ String base = (String) application.getAttribute("base");
 	type="text/css" />
 </head>
 <body>
-	<%-- <jsp:include page="TopMenu.jsp" flush="true"/> --%>
-	<%-- <jsp:include page="LeftMenu.jsp" flush="true"/> --%>
 	<%
-	boolean amenitiesSelected= false; 
-		boolean firstPass = true; 
+		boolean amenitiesSelected= false; 
 		
 		String reservationID = request.getParameter("reservationID");
 		
@@ -39,16 +34,20 @@ String base = (String) application.getAttribute("base");
 				<th>Total</th>
 			</tr>
 			<%
+			String lastReservationNumber = null;
 			ArrayList<ExistingReservation> reservations = dataManager.getReservation(reservationID);
 				Iterator<ExistingReservation> iterator = reservations.iterator();
 				while (iterator.hasNext()) {
+					
 					ExistingReservation reservation = (ExistingReservation) iterator.next();
-					//           String pId = book.getId();
-					if (firstPass == true) {
+					if (lastReservationNumber !=reservation.getReservationID()){
+						lastReservationNumber = reservation.getReservationID();
+					
+					
 			%>
 			<tr>
 				<td><%=reservation.getReservationID()%></td>
-				<td><%=reservation.getReservationID()%></td>
+				<td><%=reservation.getCheckinDate()%></td>
 				<td><%=reservation.getCheckoutDate()%></td>
 				<td><%=reservation.getNumberOfGuests()%></td>
 				<td><%=reservation.getTotal()%></td>
@@ -56,17 +55,18 @@ String base = (String) application.getAttribute("base");
 			</tr>
 
 		</table>
-
+	
 		<%
-		firstPass = false;
 		} else {
 
 			amenitiesSelected = true;
 		%>
+		
 			<table>
+				<tr>
 				<th>Amenity</th>
 				<th>Price</th>
-
+				</tr>
 			<%
 			}
 			%> 
