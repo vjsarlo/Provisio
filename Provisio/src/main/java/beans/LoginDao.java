@@ -4,40 +4,45 @@ import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+
+import customer.booking.DBConnection;
 
 public class LoginDao {
 
 	public static boolean validate(LoginBean bean) throws SQLException {
 		boolean status = false;
-		java.sql.ResultSet resultSet = null;
-		java.sql.Connection con = null;
-		java.sql.PreparedStatement ps = null;
+		ResultSet resultSet = null;
+		Connection con = null;
+		PreparedStatement ps = null;
 		System.out.println("**In Login Dao**");
 
 		try {
-			con = ConnectionProvider.getCon();
-//			System.out.println("Connection: "+ con);
+			con = DBConnection.getConnection();
+			System.out.println("Connection: "+ con);
 
 			ps = con.prepareStatement("select * from guest where username=? and password=?");
-//			System.out.println("PS: "+ ps);
+			System.out.println("PS: "+ ps);
 			
-//			System.out.println("beanid: "+ bean.getIdGuest());
+			System.out.println("beanid: "+ bean.getIdGuest());
 			String salt = bean.getSalt(bean.getEmail());
-//			System.out.println("salt: "+ salt);
+			System.out.println("salt: "+ salt);
 
 			byte[] byteSalt = fromHex(salt);
-//			System.out.println(byteSalt);
+			System.out.println(byteSalt);
 
 			String securePassword = toHex(getSaltedHash(bean.getPassword(), byteSalt));
-//			System.out.println("Securepass: " +securePassword);
+			System.out.println("Securepass: " +securePassword);
 
 			ps.setString(1, bean.getEmail().strip());
 			ps.setString(2, securePassword);
-//			System.out.println("PS: " +ps);
+			System.out.println("PS: " +ps);
 
 			resultSet = ps.executeQuery();
 
@@ -45,10 +50,11 @@ public class LoginDao {
 				bean.setIdGuest(resultSet.getInt(1));
 				System.out.println("ID GUEST:" + bean.getIdGuest());
 			}
-//			System.out.println("LoginDao get Customer ID: "+bean.getIdGuest());
+			System.out.println("LoginDao get Customer ID: "+bean.getIdGuest());
 			status = (bean.getIdGuest() != null);
 
 		} catch (Exception e) {
+			System.out.println("Could not connect to database in LoginDao. Error: " +e);
 		} finally {
 			con.close();
 			if (resultSet != null) {
