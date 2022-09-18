@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/Provisio/css/homepre-index.css">
 <div class="headerpre-login">
       <!-- Logo Header-->
       <div class="logo-div">
@@ -9,6 +10,7 @@
         <a class="about-us-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
         <a class="locations-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/locationspage.html">Locations</a>       
         <a class="rooms-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/bookroom/bookroom.jsp">Rooms</a>
+
         <!-- Login/Register Drop Down Header -->
         <div class="login-register-div-header">
           <ul class="menu">
