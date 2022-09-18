@@ -852,41 +852,80 @@ Wasn't sure if we wanted to maintain a singular CSS or if we want to separate ou
   /*End of ReservationLookUp.html */
  
  /* ABOUT US SECTION START */
-#about-us-div {
-  background-color: var(--background-blue);
-  height: 95%;
-  width: 100%;
-  padding: 3em;
+ #about-us-div {
+  height: 289px;
   left: 60px;
-  position: relative;
-  top: 650px;
-  border-width: 1px;
-  border-radius: 20px;
-  border-style: solid;
-  border-color: var(--background-blue);
+  position: absolute;
+  top: 950px;
+  width: 1323px;
   display: block;
   text-align: center;
 }
+.about-us-container1, .about-us-container2,.about-us-container3{ 
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
 
-.quarter {
-	position: absolute;
-	width:50%;
-	height:50%;
+#more-about-us-text.main-section-text{
+    top: 650px;
+ 	margin-bottom: 20px;
+}
+
+#about-us-box{
+    position: relative;
+    background-color:var(--background-blue);
+    color: white; 
+    height:312px;
+    overflow:auto;
+    font-size: 25px;
+    margin-bottom: 50px;
+
+}
+#boat-img{
+    float: left;
+    width: 250px;
+    height:312px;
+    /* top | right | bottom |left*/
+    margin: 0px 20px 20px 0px;
+
+}
+
+#how-to-use-box{
+    clear: left;
+    position: relative;
+    background-color: var(--background-blue);
+    color: white;
+    height:312px;
+    overflow:auto;
+    font-size: 25px;
+
+
+}
+#hotel-img{
+    float: right;
+    width: 250px;
+    height:312px;
+    /* top | right | bottom |left*/
+    margin: 0px 0px 20px 20px;
+}
+
+#contact-us-box{
+    clear: left;
+    position: relative;
+    background-color: var(--background-blue);
+    color: white;
+    height:150px;
+    overflow:auto;
+    font-size: 25px;
+
+
 }
 
 .about-us-text {
   background-color: transparent;
   color: var(--text-color);
-  font-family: var(--font-family-ubuntu);
-  font-size: var(--font-size-36);
-  font-weight: 400;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-top: 20px;
 }
 
  /* ABOUT US SECTION END */
-
 
