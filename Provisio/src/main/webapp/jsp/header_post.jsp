@@ -6,19 +6,20 @@
       </div>
       <!-- Header Links -->
       <div class="header-links">
-        <a class="home-link-header header-links-style" href="index.jsp">Home</a>
-        <a class="about-us-link-header header-links-style" href="/Provisio/jsp/prelogin/aboutpage.html">About Us</a>
-        <a class="locations-link-header header-links-style" href="">Locations</a>       
-        <a class="rooms-link-header header-links-style" href="">Rooms</a>
+        <a class="home-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/index.jsp">Home</a>
+        <a class="about-us-link-header header-links-style" href="./PostLogin/aboutpage.html">About Us</a>
+        <a class="locations-link-header header-links-style" href="./PostLogin/locationspage.html">Locations</a>       
+        <a class="rooms-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/myBookings.jsp">Rooms</a>
+
         <!-- Login/Register Drop Down Header -->
         <div class="login-register-div-header">
           <ul class="menu">
             <li class="login-register-list-header header-links-style">
               <a href="#">My Account </a>
               <ul class="submenu">
-                <li><a href="/Provisio/jsp/myAccount.jsp">Reservations</a></li>
-                <li><a href="/Provisio/jsp/myBookings.jsp">My Bookings</a></li>
-                <li><a href="/Provisio/jsp/logout.jsp">Logout</a></li>
+                <li><a href="/Provisio/src/main/webapp/jsp//myAccount.jsp">Reservations</a></li>
+                <li><a href="/Provisio/src/main/webapp/jsp/myBookings.jsp">My Bookings</a></li>
+                <li><a href="/Provisio/src/main/webapp/jsp/logout.jsp">Logout</a></li>
               </ul>
             </li>
           </ul>
