@@ -47,12 +47,13 @@ public class NewGuest {
 		String securePassword = toHex(getSaltedHash(guest.getPassword(),byteSalt));  //store this as pass
 		
 		// insert new customer into database
-		String query = "Insert into guest (username, password, firstname, lastname, points) values('" +
+		String query = "Insert into guest (username, password, email, phone, name, points) values('" +
 				
 				guest.getUsername() + "', '"+		 
 				securePassword + "', '" + 
-				guest.getFirstName() + "', '" +
-				guest.getLastName() + "', 0)";
+				guest.getUsername() + "', 0,'" + 
+				
+				guest.getFullName() + "', 0)";
 		try {
 		
 			dataManager.executeSQL(query);

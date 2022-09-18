@@ -18,7 +18,7 @@ public class GuestLookup {
       try {
         Statement s = connection.createStatement();
         
-        String sql = "Select idguest, firstname, lastname, username, points "
+        String sql = "Select idguest, name, username, points, email, phone "
         		+ "from guest"
             + " where username = '" + customerID.trim()+"'";
         System.out.println("SQL: "+sql);
@@ -27,10 +27,11 @@ public class GuestLookup {
           try {
             while (rs.next()) {
               guest.setIdGuest(rs.getInt(1));
-              guest.setFirstName(rs.getString(2));
-              guest.setLastName(rs.getString(3));
-              guest.setUsername(rs.getString(4));
-              guest.setPoints(rs.getInt(5));
+              guest.setFullName(rs.getString(2));
+              guest.setUsername(rs.getString(3));
+              guest.setPoints(rs.getInt(4));
+              guest.setEmail((rs.getString(5)));
+              guest.setPhone(0);
             
              
               }

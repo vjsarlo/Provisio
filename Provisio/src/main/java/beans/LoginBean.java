@@ -44,8 +44,12 @@ public class LoginBean {
 		} catch (java.sql.SQLException e) {
 			System.out.println("error");
 		} finally {
-			resultSet.close();
-			statement.close();
+			if(!resultSet.isClosed()) {
+				resultSet.close();
+			}
+			if(!statement.isClosed()) {
+				statement.close();
+			}
 		}
 
 		return salt;

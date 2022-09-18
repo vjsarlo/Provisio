@@ -33,8 +33,7 @@ public class RegistrationServlet extends HttpServlet {
 
 		NewGuest newGuest = new NewGuest();
 		Guest guest = new Guest();
-		guest.setFirstName(firstname);
-		guest.setLastName(lastname);
+		guest.setFullName(firstname+" "+lastname);
 		guest.setUsername(email);
 		guest.setPassword(password);
 		guest.setPoints(ZERO);

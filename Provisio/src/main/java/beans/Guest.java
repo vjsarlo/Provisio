@@ -13,19 +13,39 @@ public class Guest implements java.io.Serializable {
 
 	
 		private Integer idGuest = null;
-		private String firstName = null;
-		private String lastName = null;
+		private String fullName = null;
 		private String username = null;
 		private String password = null;
 		private Integer points = null;
+		private Integer phone = null;
+		private String email = null;
 		
 		
 		
+		public Integer getPhone() {
+			return phone;
+		}
+		public void setPhone(Integer phone) {
+			this.phone = phone;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
 		public Integer getIdGuest() {
 			return idGuest;
 		}
 		public void setIdGuest(Integer idGuest) {
 			this.idGuest = idGuest;
+		}
+		
+		public String getFullName() {
+			return fullName;
+		}
+		public void setFullName(String fullName) {
+			this.fullName = fullName;
 		}
 		public Integer getPoints() {
 			return points;
@@ -46,18 +66,7 @@ public class Guest implements java.io.Serializable {
 			this.password = password;
 		}
 		
-		public String getFirstName() {
-			return firstName;
-		}
-		public void setFirstName(String firstName) {
-			this.firstName = firstName;
-		}
-		public String getLastName() {
-			return lastName;
-		}
-		public void setLastName(String lastName) {
-			this.lastName = lastName;
-		}
+		
 	
 }
 		
