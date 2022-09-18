@@ -7,12 +7,14 @@
 		<!-- Footer Links -->
 		<a class="home-link-footer footer-links-style" href="index.jsp">Home</a>
 		<a class="about-us-link-footer footer-links-style"
-			href="/Provisio/jsp/prelogin/aboutpage.html">About Us</a>
+			href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
+
 		<!-- Login Button Footer -->
 		<div class="footer-text">Login To Book Your Vacation!</div>
 		<div class="footer-login-button-div">
 			<a class="login-button-footer login-button-style"
-				href="/Provisio/jsp/loginpages/login.jsp">Login</a>
+				href="/Provisio/src/main/webapp/jsp/prelogin/login.jsp">Login</a>
+
 		</div>
 	</div>
 </div>
