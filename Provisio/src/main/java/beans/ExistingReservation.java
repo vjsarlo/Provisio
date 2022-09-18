@@ -5,8 +5,7 @@ import java.util.Date;
 public class ExistingReservation {
 	private String reservationID;
 	private Integer guestID;
-	private String firstName;
-	private String lastName;
+	private String name;
 	private Date checkinDate;
 	private Date checkoutDate;
 	private Integer numberOfGuests;
@@ -26,18 +25,13 @@ public class ExistingReservation {
 	public void setGuestID(Integer guestID) {
 		this.guestID = guestID;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	
 	public Date getCheckinDate() {
 		return checkinDate;
 	}

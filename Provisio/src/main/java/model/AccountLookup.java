@@ -19,7 +19,7 @@ public class AccountLookup {
         
        
         
-        String sql = "Select idguest,firstName, lastname, username, password, points "
+        String sql = "Select idguest,name, username, password, points "
         		+ "from guest"
             + " where idguest =" + customerID.trim();
         System.out.println("SQL: "+sql);
@@ -28,11 +28,12 @@ public class AccountLookup {
           try {
             while (rs.next()) {
               account.setIdGuest(rs.getString(1));
-              account.setFirstName(rs.getString(2));
-              account.setLastName(rs.getString(3));
-              account.setUsername(rs.getString(4));
-              account.setPassword(rs.getString(5));
-              account.setPoints(rs.getInt(6));
+              String[] name = rs.getString(2).split(" ");
+              account.setFirstName(name[0]);
+              account.setLastName(name[1]);
+              account.setUsername(rs.getString(3));
+              account.setPassword(rs.getString(4));
+              account.setPoints(rs.getInt(5));
              
               }
             }
