@@ -1,0 +1,931 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,300,500");
+
+/* STYLE GUIDE START*/
+:root {
+  --black: #000000;
+  --wei: #ffffff;
+  --text-color: #957554;
+  --background-grey: #d9d9d9;
+  --highlight-yellow: #dfaa5b;
+  --background-blue: #192537;
+  --font-size-18: 18px; /* Header Links Text */
+  --font-size-20: 20px; /* Footer Links Text */
+  --font-size-24: 24px; /* Login Button Text */
+  --font-size-30: 30px; /* Footer Button Text */
+  --font-size-32: 32px; /* Login Buttons Text */
+  --font-size-36: 36px; /* Main Section Text */
+  
+  --font-family-ubuntu: 'Ubuntu', sans-serif;; /* All Font Used */
+}
+/*Preset Classes  */
+.header-links-style {
+  color: var(--text-color);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-18);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.login-button-style {
+  color: var(--wei);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-32);
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.footer-links-style {
+  color: var(--wei);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-20);
+  font-style: normal;
+  font-weight: 400;
+}
+/* STYLE GUIDE END */
+
+
+
+/* SETTINGS RESET START*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+/* SETTINGS RESET END */
+
+body, html {
+  margin: 0px;
+  height: 100%;
+  /*overflow-x: hidden;*/
+  width: 100%;
+}
+
+/* HEADER Pre-Login START */
+.headerpre-login {
+  background-color: transparent;
+  height: 362px;
+  left: 0px;
+  position: absolute;
+  width: 1440px;
+}
+/* Logo Header */
+.logo {
+  background-color: transparent;
+  height: 100px;
+  left: 0px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: 700px;
+}
+/* Header Links */
+.header-links {
+  background-color: transparent;
+  height: 0px;
+  left: 0px;
+  position: absolute;
+  top: 90px;
+  width: 1440px;
+}
+
+.home-link-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 600px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 18px;
+  transition: all 0.3s ease;
+  width: auto;
+  text-decoration: none;
+}
+
+.about-us-link-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 700px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 18px;
+  transition: all 0.3s ease;
+  width: auto;
+  text-decoration: none;
+}
+
+.locations-link-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 965px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 18px;
+  transition: all 0.3s ease;
+  width: auto;
+  text-decoration: none;
+}
+
+.contact-us-link-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 825px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 18px;
+  transition: all 0.3s ease;
+  width: auto;
+  text-decoration: none;
+}
+
+.rooms-link-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 1090px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 18px;
+  transition: all 0.3s ease;
+  width: auto;
+  text-decoration: none;
+}
+
+.home-link-header:hover,
+.about-us-link-header:hover,
+.locations-link-header:hover,
+.contact-us-link-header:hover,
+.rooms-link-header:hover {
+  transform: scale(1.8);
+  color: #192537;
+  -webkit-text-stroke: 1px #dfaa5b;
+  font-weight: 800;
+}
+/* Login/Register Dropdown Header */
+.login-register-div-header {
+  background-color: transparent;
+  cursor: pointer;
+  height: 0px;
+  left: 1158px;
+  pointer-events: auto;
+  position: absolute;
+  width: 200px;
+}
+
+.login-register-list-header {
+  background-color: transparent;
+  height: 50px;
+  left: 20px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  width: 200px;
+}
+
+
+.menu,
+.submenu {
+    display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu > li {
+  background: var(--background-grey);
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.menu a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-family-ubuntu);
+}		
+
+.menu li:hover {
+  background: var(--background-blue);
+  z-index: 2;
+}		
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+/* Dropdown Menu */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; 
+  margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.submenu li {
+  background-color: #34495e;
+  position: relative;
+  overflow: hidden;
+}						
+
+.submenu > li > a {
+  padding: 1em 2em;			
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;			
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);			
+}		
+/* Link Designs */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}				
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;			
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}		
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);			
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);			
+}
+/* HEADER Pre-Login END */
+
+
+
+/* SUB HEADER START */
+.sub-header-div {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 140px;
+  width: 1440px;
+}
+
+.check-availability-div {
+  background-color: var(--background-blue);
+  height: 60px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  width: 1440px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  z-index: 1;
+}
+
+/* Destination Choice */
+.destination-div {
+  background-color:  transparent;
+  height: 30px;
+  left: 300px;
+  position: absolute;
+  top: 12px;
+  width: auto;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  color: var(--highlight-yellow);
+}
+
+.destination-choice {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--highlight-yellow);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-18);
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0px;
+  border-style: none;
+}
+/* Check-In Choice */
+.check-in-date-div {
+  background-color: transparent;
+  height: 30px;
+  left: 550px;
+  position: absolute;
+  top: 12px;
+  width: auto;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  color: var(--highlight-yellow);
+}
+/* Check-Out Choice */
+.check-out-date-div {
+  background-color: transparent;
+  height: 30px;
+  margin-left: 770px;
+  position: absolute;
+  top: 12px;
+  width: auto;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  color: var(--highlight-yellow);
+}
+
+.input-label,
+.input {
+  font-family: var(--font-family-ubuntu);
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.input-label {
+  font-size: var(--font-size-18);
+  top: 2px;
+}
+.input {
+  cursor: pointer;
+}
+/* Check Button */
+.check-availability-button:hover {
+  transform: translate(-10px, 0);
+}
+
+.check-availability-button {
+  cursor: pointer;
+  background-color: var(--highlight-yellow);
+  color: var(--wei);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-18);
+  font-style: normal;
+  font-weight: 300;
+  height: 30px;
+  left: 1000px;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+  width: auto;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+/* SUBHEADER END */
+
+
+
+/* MAIN PHOTO START */
+.main-photo-div {
+  background-color: transparent;
+  height: 790px;
+  left: 0px;
+  position: absolute;
+  top: 200px;
+  width: 1440px;
+}
+
+.main-photo {
+  background-color: transparent;
+  height: 600px;
+  left: 0px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+/* MAIN PHOTO END */
+
+
+/* MAIN SECTION START */
+.main-section-div {
+  background-color: var(--background-blue);
+  height: 289px;
+  left: 60px;
+  position: absolute;
+  top: 650px;
+  width: 1323px;
+  border-width: 10px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  display: block;
+  text-align: center;
+}
+
+.main-section-text {
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-36);
+  font-weight: 400;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-button-main{
+  cursor: pointer;
+  background-color: transparent;
+  height: 50px;
+  left: 650px;
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  width: 200px;
+  border-radius: 10px;
+  border-color: var(--highlight-yellow);
+  border-style: solid;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.login-button-main:before,
+.login-button-main:after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background-color: var(--highlight-yellow);
+  border-color: var(--background-blue);
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all .5s;
+}
+
+.login-button-main:before{
+  opacity: .5;
+
+}
+
+.login-button-main:after{
+  transition-delay: .2s;
+}
+
+.login-button-main:hover{
+  color: var(--wei);
+  -webkit-text-stroke: 1.5px #192537;
+  transform: scale(1.2) translate(-50%, -50%);
+}
+
+.login-button-main:hover:before,
+.login-button-main:hover:after{
+  top: 0;
+}
+/* MAIN SECTION END */
+
+
+
+/* MAIN CONTENT START */
+
+/* MAIN CONTENT END */
+
+
+
+/* FOOTER Pre-Login START */
+.footerpre-login {
+  background-color: transparent;
+  height: 200px;
+  left: 0px;
+  position: absolute;
+  top: 1000px;
+  width: 100%;
+}
+
+.footer-div {
+  background-color: var(--background-blue);
+  height: 200px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 1440px;
+}
+/* Footer Logo */
+.footer-logo-div {
+  background-color: transparent;
+  height: 200px;
+  left: 1px;
+  position: absolute;
+  top: 0px;
+  width: 395px;
+}
+
+.footer-logo {
+  background-color: transparent;
+  height: 200px;
+  left: 50px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 200px;
+}
+/* Footer Links */
+.home-link-footer:hover,
+.about-us-link-footer:hover,
+.contact-us-link-footer:hover {
+  transform: scale(1.4) translate(30px, 0);
+  color: #192537;
+  -webkit-text-stroke: 1px #dfaa5b;
+}
+
+.home-link-footer {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 350px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 30px;
+  transition: all 0.3s ease;
+  width: 103px;
+}
+
+.about-us-link-footer {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 350px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 90px;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+.contact-us-link-footer {
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 350px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  pointer-events: auto;
+  position: absolute;
+  text-align: left;
+  top: 150px;
+  transition: all 0.3s ease;
+  width: 186px;
+}
+/* Login Button Footer */
+.footer-text {
+  background-color: transparent;
+  color: var(--wei);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-30);
+  font-style: normal;
+  font-weight: 500;
+  height: auto;
+  left: 999px;
+  letter-spacing: 0px;
+  line-height: normal;
+  mix-blend-mode: normal;
+  position: absolute;
+  text-align: left;
+  top: 30px;
+  width: 408px;
+}
+
+.login-button-footer {
+  cursor: pointer;
+  background-color: transparent;
+  height: 50px;
+  left: 1200px;
+  position: absolute;
+  text-align: center;
+  top: 125px;
+  width: 222px;
+  border-radius: 10px;
+  border-color: var(--highlight-yellow);
+  border-style: solid;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.login-button-footer:before,
+.login-button-footer:after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background-color: var(--highlight-yellow);
+  border-color: var(--background-blue);
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all .5s;
+}
+
+.login-button-footer:before{
+  opacity: .5;
+}
+
+.login-button-footer:after{
+  transition-delay: .2s;
+}
+
+.login-button-footer:hover{
+  color: var(--wei);
+  -webkit-text-stroke: 1.5px #192537;
+  transform: scale(1.2) translate(-50%, -50%);
+}
+
+.login-button-footer:hover:before,
+.login-button-footer:hover:after{
+  top: 0;
+}
+/* FOOTER Pre-Login END */
+
+/*Edits that John Made for myAccount.html and for reservationLookUp.html. 
+Wasn't sure if we wanted to maintain a singular CSS or if we want to separate out based on page.*/
+
+/*myAccount.html*/
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 200px;
+}
+
+.my-account-div-header {
+    background-color: transparent;
+    cursor: pointer;
+    height: 0px;
+    left: 1158px;
+    pointer-events: auto;
+    position: absolute;
+    width: 200px;
+  }
+
+.my-account-list-header {
+    background-color: transparent;
+    height: 50px;
+    left: 20px;
+    letter-spacing: 0px;
+    line-height: normal;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: center;
+    top: 4px;
+    width: 200px;
+  }
+
+  .white-box-2 {
+      display: inline-block;
+      width: 40%;
+      background-color: #d9d9d9;
+      margin-top: 20px;
+      margin-left: 3%;
+      margin-right: 3%;
+  }
+
+  .white-box-1 {
+    display: inline-block;
+    width: 80%;
+    background-color: #d9d9d9;
+    margin-top: 20px;
+  }
+
+  .white-box-text {
+    font-family: var(--font-family-ubuntu);
+    font-size: var(--font-size-36);
+    font-weight: 400;
+    color: #192537;
+    display: inline-block;
+    text-align: center;
+    margin-top: 1px;
+  }
+
+  .footerpost-login {
+    background-color: transparent;
+    height: 200px;
+    left: 0px;
+    position: absolute;
+    top: 1000px;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 2px solid;
+    border-collapse: collapse;
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    background: #d9d9d9;
+  }
+  
+  th {
+  height: 25px;
+  }
+  
+  td {
+  height: 30px;
+  
+  }
+
+  /*End of myAccount.html*./
+
+  /*reservationLookUp.htm/*/
+
+  .reservation-id {
+    width: 40%;
+    background-color: #d9d9d9;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 150px;
+  }
+
+  /*End of ReservationLookUp.html */
+ 
+ /* ABOUT US SECTION START */
+ #about-us-div {
+  height: 289px;
+  left: 60px;
+  position: absolute;
+  top: 950px;
+  width: 1323px;
+  display: block;
+  text-align: center;
+}
+.about-us-container1, .about-us-container2,.about-us-container3{ 
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#more-about-us-text.main-section-text{
+    top: 650px;
+ 	margin-bottom: 20px;
+}
+
+#about-us-box{
+    position: relative;
+    background-color:var(--background-blue);
+    color: white; 
+    height:312px;
+    overflow:auto;
+    font-size: 25px;
+    margin-bottom: 50px;
+
+}
+#boat-img{
+    float: left;
+    width: 250px;
+    height:312px;
+    /* top | right | bottom |left*/
+    margin: 0px 20px 20px 0px;
+
+}
+
+#how-to-use-box{
+    clear: left;
+    position: relative;
+    background-color: var(--background-blue);
+    color: white;
+    height:312px;
+    overflow:auto;
+    font-size: 25px;
+
+
+}
+#hotel-img{
+    float: right;
+    width: 250px;
+    height:312px;
+    /* top | right | bottom |left*/
+    margin: 0px 0px 20px 20px;
+}
+
+#contact-us-box{
+    clear: left;
+    position: relative;
+    background-color: var(--background-blue);
+    color: white;
+    height:150px;
+    overflow:auto;
+    font-size: 25px;
+
+
+}
+
+.about-us-text {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+ /* ABOUT US SECTION END */
+

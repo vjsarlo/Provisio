@@ -8,7 +8,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" href="/Provisio/css/homepre-index.css">
+<link rel="stylesheet" href="/Provisio/css/index.css">
 <script type="text/javascript" src="/Provisio/jsp/index.js"></script>
 <title>Load Up Page</title>
 
