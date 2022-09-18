@@ -43,7 +43,7 @@
 				Worries. We'll Handle Everything You Need!</div>
 			<div class="main-section-login-button-div">
 				<a class="login-button-main login-button-style"
-					href="./PreLogin/loginpage.html">Login</a>
+					href="/Provisio/jsp/loginpages/login.jsp">Login</a>
 			</div>
 		</div>
 		<!-- MAIN SECTION END-->
