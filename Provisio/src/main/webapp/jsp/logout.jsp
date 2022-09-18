@@ -5,6 +5,6 @@
 <%  
 	
 session.setAttribute("session","FALSE");  
-response.sendRedirect("/Provisio/jsp/index.jsp");
+response.sendRedirect("/Provisio/src/main/webapp/jsp/index.jsp");
 %>  
 

@@ -163,8 +163,8 @@
 
             <header>
                 <div class="topnav">
-                    <a class="active" href="/Provisio/jsp/index.jsp"> Home </a>
-                    <a href="/Provisio/jsp/registerpages/register.jsp"> Join Us! Register Here!</a>
+                    <a class="active" href="/Provisio/src/main/webapp/jsp/index.jsp"> Home </a>
+                    <a href="/Provisio/src/main/webapp/jsp/registerpages/register.jsp"> Join Us! Register Here!</a>
                 </div>
             </header>
             <br>

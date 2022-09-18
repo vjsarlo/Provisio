@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,59 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bookroom.css">
+    <link rel="stylesheet" href="/Provisio/css/bookroom.css">
     <title>Book Reservation Page</title>
 </head>
 
 <body style="background-color: #d9d9d9;">
+
   <!-- CONTAINER DIV START -->
   <div class="container">
-    <!-- HEADER (Pre-Login) START -->
-    <!-- MAIN HEADER START -->
-    <div class="headerpre-login">
-      <!-- Logo Header-->
-      <div class="logo-div">
-        <img class="logo" src="/Provisio/images/Logos/LargeLogo.png"/>
-      </div>
-      <!-- Header Links -->
-      <div class="header-links">
-        <a class="home-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/index.jsp">Home</a>
-        <a class="about-us-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
-        <a class="locations-link-header header-links-style" href="locations.html">Locations</a>       
-        <a class="rooms-link-header header-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/bookroom/bookroom.jsp">Rooms</a>
-        <!-- Login/Register Drop Down Header -->
-        <div class="login-register-div-header">
-          <ul class="menu">
-            <li class="login-register-list-header header-links-style">
-              <a href="#">Login/Register </a>
-              <ul class="submenu">
-                <li><a href="/Provisio/src/main/webapp/jsp/loginpages/login.jsp">Login</a></li>
-                <li><a href="/Provisio/src/main/webapp/jsp/prelogin/bookroom/bookroom.jsp/registerpages/register.jsp">Register</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- MAIN HEADER END -->
-      <!-- SUB HEADER (CHECK AVAILABILITY) START -->
-      <div class="sub-header-div">
-        <div class="check-availability-div">
-          <select class="sub-header-text select" id="result-destination-header">
-            <option value="Choose Destination" disabled selected hidden>Choose Destination</option>
-            <option value="LasVegas">LasVegas</option>
-            <option value="Seattle">Seattle</option>
-          </select>
-          <script>
-            document.getElementById('result-destination-header').addEventListener("change", function () {
-              document.getElementById('result-destination').selectedIndex = document.getElementById('result-destination-header').selectedIndex;
-            }, false);
-          </script>
-        </div>
-      </div>
-      <!-- SUB HEADER END -->
-    </div>
-    <!-- HEADER (Pre-Login) END -->
     
+		<!-- HEADER (Pre-Login) START -->
+		<!-- MAIN HEADER START -->
+		<%
+		if (session.getAttribute("session") != "TRUE") {
+		%>
+		<%@include file="header_pre_book.jsp"%>
+		<%
+		} else {
+		%>
+		<%@include file="header_post_book.jsp"%>
+		<%}%>
+
     <!-- MAIN PHOTO START -->
     <div id="showLasVegas" class="main-photo-div">
       <img src="/Provisio/images/Photos/LasVegas.jpeg" class="main-photo" />
@@ -231,8 +200,11 @@
             <select class="user_change guestNumber select" id="guestNumber" data-name="choiceGuests" name="guestNumber">
             <!--<select class="guestNumber select" id="guestNumber" name="guestNumber"> -->
               <option value="0" disabled selected hidden>How Many Guests Are There?</option>
-              <option value="1-2">1-2</option>
-              <option value="3-5">3-5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
           <div class="input-group">
@@ -263,59 +235,59 @@
             <table id="finalTable">
               <tr>
                 <th>Destination:</th>
-                <td><input id="choiceDestination" class="readonly" required></td>
+                <td><input id="choiceDestination" class="readonly" name="choiceDestination" required></td>
               </tr>
               <tr>
                 <th>Room:</th>
-                <td><input id="choiceRoom" class="readonly" required></td>
+                <td><input id="choiceRoom" class="readonly" name="choiceRoom" required></td>
               </tr>
               <tr>
                 <th>Price Per Night:</th>
-                <td><input id="choiceRoomPrice" class="readonly" required></td>
+                <td><input id="choiceRoomPrice" class="readonly" name="choiceRoomPrice" required></td>
               </tr>
               <tr>
                 <th>Check-In Date:</th>
-                <td><input id="choiceCheckin" class="readonly" required></td>
+                <td><input id="choiceCheckin" class="readonly" name="choiceCheckin" required></td>
               </tr>
               <tr>
                 <th>Check-Out Date:</th>
-                <td><input id="choiceCheckout" class="readonly" required></td>
+                <td><input id="choiceCheckout" class="readonly" name="choiceCheckout" required></td>
               </tr>
               <tr>
                 <th>Total Nights:</th>
-                <td><input id="stayLength" class="readonly" required></td>
+                <td><input id="stayLength" class="readonly" name="stayLength" required></td>
               </tr>
               <tr>
                 <th>Stay Price:</th>
-                <td><input id="stayPrice" class="totalCostPiece readonly" required></td>
+                <td><input id="stayPrice" class="totalCostPiece readonly" name="stayPrice" required></td>
               </tr>
               <tr>
                 <th>Name:</th>
-                <td><input id="choiceName" class="readonly" required></td>
+                <td><input id="choiceName" class="readonly" name="choiceName" required></td>
               </tr>
               <tr>
                 <th>Phone Number:</th>
-                <td><input id="choicePhone" class="readonly" required></td>
+                <td><input id="choicePhone" class="readonly" name="choicePhone" required></td>
               </tr>
               <tr>
                 <th>Email:</th>
-                <td><input id="choiceEmail" class="readonly" required></td>
+                <td><input id="choiceEmail" class="readonly" name="choiceEmail" required></td>
               </tr>
               <tr>
                 <th>Number Of Guests:</th>
-                <td><input id="choiceGuests" class="readonly" required></td>
+                <td><input id="choiceGuests" class="readonly" name="choiceGuests" required></td>
               </tr>
               <tr>
                 <th>Amenities Chosen:</th>
-                <td><input id="choiceAmenities" class="readonly" required></td>
+                <td><input id="choiceAmenities" class="readonly" name="choiceAmenities" required></td>
               </tr>
               <tr>
                 <th>Amenities Cost:</th>
-                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" required></td>
+                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" name="choiceAmenitiesPrice" required></td>
               </tr>
               <tr>
                 <th>Total:</th>
-                <td><input id="totalCost" class="totalCost readonly" required></td>
+                <td><input id="totalCost" class="totalCost readonly" name="totalCost" required></td>
               </tr>
             </table>
           </div>
@@ -339,12 +311,15 @@
         <!-- Footer Links -->
         <a class="home-link-footer footer-links-style" href="/Provisio/src/main/webapp/jsp/index.jsp">Home</a>
         <a class="about-us-link-footer footer-links-style" href="/Provisio/src/main/webapp/jsp/prelogin/aboutpage.html">About Us</a>
+
         <!-- Login Button Footer -->
         <div class="footer-text">
           Login To Book Your Vacation!
         </div>
         <div class="footer-login-button-div">
+
           <a class="login-button-footer login-button-style" href="/Provisio/src/main/webapp/jsp/loginpages/login.jsp">Login</a>
+
         </div>
       </div>
     </div>
