@@ -164,8 +164,8 @@
 
             <header>
                 <div class="topnav">
-                    <a class="active" href="/Provisio/src/main/webapp/jsp/index.jsp"> Home </a>
-                    <a href="/Provisio/src/main/webapp/jsp/loginpages/login.jsp"> Already A Part Of Our Team? Login Here! </a>
+                    <a class="active" href="/Provisio/jsp/index.jsp"> Home </a>
+                    <a href="/Provisio/jsp/loginpages/login.jsp"> Already A Part Of Our Team? Login Here! </a>
                 </div>
             </header>
             <br>
