@@ -105,7 +105,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 600px;
+  left: 700px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
@@ -122,7 +122,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 700px;
+  left: 810px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
@@ -139,24 +139,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 965px;
-  letter-spacing: 0px;
-  line-height: normal;
-  mix-blend-mode: normal;
-  pointer-events: auto;
-  position: absolute;
-  text-align: left;
-  top: 18px;
-  transition: all 0.3s ease;
-  width: auto;
-  text-decoration: none;
-}
-
-.contact-us-link-header {
-  background-color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 825px;
+  left: 950px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
