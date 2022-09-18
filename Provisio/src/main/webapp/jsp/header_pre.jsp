@@ -6,7 +6,7 @@
       </div>
       <!-- Header Links -->
       <div class="header-links">
-        <a class="home-link-header header-links-style" href="index.jsp">Home</a>
+        <a class="home-link-header header-links-style" href="/Provisio/jsp/index.jsp">Home</a>
         <a class="about-us-link-header header-links-style" href="/Provisio/jsp/aboutpage.jsp">About Us</a>
         <a class="locations-link-header header-links-style" href="">Locations</a>       
         <a class="rooms-link-header header-links-style" href="">Rooms</a>
