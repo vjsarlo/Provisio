@@ -8,8 +8,8 @@
 
 <%
 System.out.println("In loginprocess.jsp");
-// System.out.println("EMAIL" + obj.getEmail());
-// System.out.println("ID GUEST" + obj.getIdGuest());
+System.out.println("EMAIL" + obj.getEmail());
+System.out.println("ID GUEST" + obj.getIdGuest());
 boolean status = LoginDao.validate(obj);
 // System.out.println(status);
 

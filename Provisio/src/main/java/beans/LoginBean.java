@@ -1,6 +1,8 @@
 package beans;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.DataManager;
@@ -20,8 +22,8 @@ public class LoginBean {
 	}
 
 	public String getSalt(String email) throws SQLException, ClassNotFoundException {
-		java.sql.PreparedStatement statement = null;
-		java.sql.ResultSet resultSet = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
 		System.out.println("In getSalt() email: "+ email);
 		
 		try {
@@ -37,8 +39,12 @@ public class LoginBean {
 				salt = resultSet.getString(1);
 				System.out.println("salt in resultset: "+salt);
 			}
-			resultSet.close();
-			statement.close();
+			if(!resultSet.isClosed()) {
+				resultSet.close();
+			}
+			if(!statement.isClosed()) {
+				statement.close();
+			}
 		
 
 		} catch (java.sql.SQLException e) {
