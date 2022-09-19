@@ -8,7 +8,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" href="/Provisio/css/homepre.css">
+<link rel="stylesheet" href="/Provisio/css/aboutpage.css">
 <title>About Us</title>
 <script type="text/javascript" src="index.js"></script>
 </head>
@@ -60,7 +60,7 @@
 	        		<p>We handle the details of your hotel reservation(s) so you don't have to. Our specialized booking system allows you to select desired check-in/check-out dates, room size, amenities and more earn loyalty points that can be used towards future reservations, trust that your travel information is protected with our secure login process</p>
 	        		<p>Create an account and find the best hotel deals today!</p>
 	      		</div>
-	      		<p><img id="hotel-img" src="/Provisio/images/Photos/hotel.jpg"" alt="Hotel">
+	      		<p><img id="hotel-img" src="/Provisio/images/Photos/hotel.jpg" alt="Hotel">
 	      </div>
     
     	<div class="about-us-container3" >

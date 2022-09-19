@@ -309,7 +309,7 @@
         </div>
         <!-- Footer Links -->
         <a class="home-link-footer footer-links-style" href="/Provisio/jsp/index.jsp">Home</a>
-        <a class="about-us-link-footer footer-links-style" href="/Provisio/jsp/prelogin/aboutpage.html">About Us</a>
+        <a class="about-us-link-footer footer-links-style" href="/Provisio/jsp/aboutpage.jsp">About Us</a>
         <!-- Login Button Footer -->
         <div class="footer-text">
           Login To Book Your Vacation!

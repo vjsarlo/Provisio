@@ -105,7 +105,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 600px;
+  left: 700px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
@@ -122,7 +122,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 700px;
+  left: 810px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
@@ -139,24 +139,7 @@ body, html {
   background-color: transparent;
   cursor: pointer;
   height: auto;
-  left: 965px;
-  letter-spacing: 0px;
-  line-height: normal;
-  mix-blend-mode: normal;
-  pointer-events: auto;
-  position: absolute;
-  text-align: left;
-  top: 18px;
-  transition: all 0.3s ease;
-  width: auto;
-  text-decoration: none;
-}
-
-.contact-us-link-header {
-  background-color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 825px;
+  left: 950px;
   letter-spacing: 0px;
   line-height: normal;
   mix-blend-mode: normal;
@@ -220,10 +203,8 @@ body, html {
   width: 200px;
 }
 
-
 .menu,
 .submenu {
-    display: inline-block;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -357,7 +338,6 @@ body, html {
   border-color: var(--highlight-yellow);
   z-index: 1;
 }
-
 /* Destination Choice */
 .destination-div {
   background-color:  transparent;
@@ -499,6 +479,20 @@ body, html {
   display: block;
   text-align: center;
 }
+.main-section-div-account {
+  background-color: var(--background-blue);
+  height: 550px;
+  left: 60px;
+  position: absolute;
+  top: 650px;
+  width: 1323px;
+  border-width: 10px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--highlight-yellow);
+  display: block;
+  text-align: center;
+}
 
 .main-section-text {
   background-color: transparent;
@@ -593,7 +587,7 @@ body, html {
   left: 0px;
   mix-blend-mode: normal;
   position: absolute;
-  top: 1000px;
+  top: 0px;
   width: 1440px;
 }
 /* Footer Logo */
@@ -745,187 +739,4 @@ body, html {
   top: 0;
 }
 /* FOOTER Pre-Login END */
-
-/*Edits that John Made for myAccount.html and for reservationLookUp.html. 
-Wasn't sure if we wanted to maintain a singular CSS or if we want to separate out based on page.*/
-
-/*myAccount.html*/
-.page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
-#content-wrap {
-  padding-bottom: 200px;
-}
-
-.my-account-div-header {
-    background-color: transparent;
-    cursor: pointer;
-    height: 0px;
-    left: 1158px;
-    pointer-events: auto;
-    position: absolute;
-    width: 200px;
-  }
-
-.my-account-list-header {
-    background-color: transparent;
-    height: 50px;
-    left: 20px;
-    letter-spacing: 0px;
-    line-height: normal;
-    mix-blend-mode: normal;
-    position: absolute;
-    text-align: center;
-    top: 4px;
-    width: 200px;
-  }
-
-  .white-box-2 {
-      display: inline-block;
-      width: 40%;
-      background-color: #d9d9d9;
-      margin-top: 20px;
-      margin-left: 3%;
-      margin-right: 3%;
-  }
-
-  .white-box-1 {
-    display: inline-block;
-    width: 80%;
-    background-color: #d9d9d9;
-    margin-top: 20px;
-  }
-
-  .white-box-text {
-    font-family: var(--font-family-ubuntu);
-    font-size: var(--font-size-36);
-    font-weight: 400;
-    color: #192537;
-    display: inline-block;
-    text-align: center;
-    margin-top: 1px;
-  }
-
-  .footerpost-login {
-    background-color: transparent;
-    height: 200px;
-    left: 0px;
-    position: absolute;
-    top: 1000px;
-    width: 100%;
-  }
-
-  table, th, td {
-    border: 2px solid;
-    border-collapse: collapse;
-    position: relative;
-    width: 100%;
-    table-layout: fixed;
-    text-align: center;
-    background: #d9d9d9;
-  }
-  
-  th {
-  height: 25px;
-  }
-  
-  td {
-  height: 30px;
-  
-  }
-
-  /*End of myAccount.html*./
-
-  /*reservationLookUp.htm/*/
-
-  .reservation-id {
-    width: 40%;
-    background-color: #d9d9d9;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 150px;
-  }
-
-  /*End of ReservationLookUp.html */
- 
- /* ABOUT US SECTION START */
- #about-us-div {
-  height: 289px;
-  left: 60px;
-  position: absolute;
-  top: 950px;
-  width: 1323px;
-  display: block;
-  text-align: center;
-}
-.about-us-container1, .about-us-container2,.about-us-container3{ 
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-#more-about-us-text.main-section-text{
-    top: 650px;
- 	margin-bottom: 20px;
-}
-
-#about-us-box{
-    position: relative;
-    background-color:var(--background-blue);
-    color: white; 
-    height:312px;
-    overflow:auto;
-    font-size: 25px;
-    margin-bottom: 50px;
-
-}
-#boat-img{
-    float: left;
-    width: 250px;
-    height:312px;
-    /* top | right | bottom |left*/
-    margin: 0px 20px 20px 0px;
-
-}
-
-#how-to-use-box{
-    clear: left;
-    position: relative;
-    background-color: var(--background-blue);
-    color: white;
-    height:312px;
-    overflow:auto;
-    font-size: 25px;
-
-
-}
-#hotel-img{
-    float: right;
-    width: 250px;
-    height:312px;
-    /* top | right | bottom |left*/
-    margin: 0px 0px 20px 20px;
-}
-
-#contact-us-box{
-    clear: left;
-    position: relative;
-    background-color: var(--background-blue);
-    color: white;
-    height:150px;
-    overflow:auto;
-    font-size: 25px;
-
-
-}
-
-.about-us-text {
-  background-color: transparent;
-  color: var(--text-color);
-}
-
- /* ABOUT US SECTION END */
 

@@ -7,7 +7,7 @@
 		<!-- Footer Links -->
 		<a class="home-link-footer footer-links-style" href="index.jsp">Home</a>
 		<a class="about-us-link-footer footer-links-style"
-			href="/Provisio/jsp/prelogin/aboutpage.html">About Us</a>
+			href="aboutpage.jsp">About Us</a>
 		
 	</div>
 </div>
