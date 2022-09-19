@@ -55,7 +55,7 @@
 
 		<!-- MAIN SECTION START -->
 		
-		<div class="main-section-div">
+		<div class="main-section-div-bookings">
 			<div class="main-section-text">My Bookings</div>
 			<div class="reservation-id">
 				<div class="white-box-text">
@@ -66,10 +66,6 @@
 					  <input type="submit" value="Submit">
 					</form>
 				</div>
-			</div>
-			<div class="main-section-text">My Reservation</div>
-			<div>
-			
 			</div>
 		</div>
 		<!-- MAIN SECTION END-->
