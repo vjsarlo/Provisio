@@ -203,7 +203,7 @@
 	                        
 	                        <fieldset>
 	                            <div class="input-container ic2">
-							        <input id="password" class="input" type="text" placeholder=" " value="" name="password" required="required"/>
+							        <input id="password" class="input" type="text" placeholder=" " value="" name="password" required="required" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one uppercase and lowercase letter, and at least 8 characters" />
 							        <div class="cut"></div>
 							        <label for="password" class="placeholder">Password</label>
 							    </div>
