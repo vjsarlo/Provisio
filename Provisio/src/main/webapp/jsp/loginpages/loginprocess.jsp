@@ -20,10 +20,17 @@ if (status) {
 	System.out.println("Customer ID in loginprocess.jsp: "  + obj.getIdGuest());
 	System.out.println("Customer ID in session "  + session.getAttribute("customerID"));
 	
+	response.sendRedirect("/Provisio/jsp/index.jsp");
+
+	
 } else {
 	session.setAttribute("session", "FALSE");
+	session.setAttribute("messages", "Invalid credentials!");
+
+	response.sendRedirect("/Provisio/jsp/loginpages/login.jsp");
+
 
 }
-response.sendRedirect("/Provisio/jsp/index.jsp");
+
 
 %>

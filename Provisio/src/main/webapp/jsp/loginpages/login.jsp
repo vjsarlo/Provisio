@@ -178,6 +178,8 @@
 	                            </h2>    						
 	                        </caption>
 	                        
+							<span style="color:red">${messages}</span>	
+	                        
 	                        <fieldset>
 	                            <div class="input-container ic1">
 							        <input id="email" class="input" type="text" placeholder=" " 
