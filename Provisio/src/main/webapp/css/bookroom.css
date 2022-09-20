@@ -746,7 +746,18 @@ td {
 /* Buttons End */
 /* MAIN CONTENT END */
 
+#login-div{
+    color: white; 
+    font-size: 25px;
+    height: 100px;
+	position: absolute;
+ 	top: 20px;
+ 	width: 1000px;
+}
 
+.btn.btn-login{
+	margin-left:450px;
+}
 
 /* FOOTER Pre-Login START */
 .footerpre-login {

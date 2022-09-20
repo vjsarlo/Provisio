@@ -124,7 +124,12 @@
     <!-- MAIN SECTION END-->
 
     <!-- MAIN CONTENT START -->
+ 
     <div class="main-content-div">
+    <%
+   	System.out.println(session.getAttribute("session") != "TRUE");
+	if (session.getAttribute("session") == "TRUE") {
+	%>
       <form method="post" action="${pageContext.request.contextPath}/booking" class="registerForm" name="bookform">
         <h1 id="registrationTitle">
             Book Your Stay!
@@ -152,6 +157,7 @@
               }, false);
             </script>
           </div>
+          
           <div class="input-group">
             <select class="user_change room-choice select" data-name="choiceRoom" id="result-room" name="result-room">
             <!--<select class="room-choice select" id="result-room" name="result-room"> -->
@@ -296,8 +302,21 @@
             <input type="submit" value="Submit" class="btn" />
           </div>
         </div>
-      </form>     
+      </form> 
+       <%}else{ %>
+   		 <div id="login-div">
+    	   <div class="main-section-text">
+        	  <h4>Login To Book Your Vacation!</h4>
+			</div>
+			<div class="btns-group">
+			 <a class="btn btn-login" href="/Provisio/jsp/loginpages/login.jsp">Login</a>
+			</div>
+   		 </div>  
+    	
+    <%} %>    
     </div>
+   
+    
     <!-- MAIN CONTENT END -->
 
     <!-- FOOTER (Pre-Login) START -->
