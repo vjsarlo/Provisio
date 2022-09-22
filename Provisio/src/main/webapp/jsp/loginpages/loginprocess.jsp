@@ -7,6 +7,7 @@
 <jsp:setProperty property="*" name="obj" />
 
 <%
+session.setAttribute("messages", "");
 System.out.println("In loginprocess.jsp");
 System.out.println("EMAIL" + obj.getEmail());
 System.out.println("ID GUEST" + obj.getIdGuest());
@@ -16,6 +17,7 @@ boolean status = LoginDao.validate(obj);
 if (status) {
 	session.setAttribute("session", "TRUE");
  	session.setAttribute("customerID", obj.getIdGuest());
+ 	
 
 	System.out.println("Customer ID in loginprocess.jsp: "  + obj.getIdGuest());
 	System.out.println("Customer ID in session "  + session.getAttribute("customerID"));

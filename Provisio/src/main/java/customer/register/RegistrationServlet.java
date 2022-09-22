@@ -22,8 +22,7 @@ public class RegistrationServlet extends HttpServlet {
 	}
 	protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
-		Map<String, String> messages = new HashMap<String, String>();
-
+		
 		final String firstname = request.getParameter("firstname");
 		final String lastname = request.getParameter("lastname");
 		final String email = request.getParameter("email");
@@ -39,11 +38,11 @@ public class RegistrationServlet extends HttpServlet {
 		guest.setPoints(ZERO);
 
 		if (newGuest.create(guest) == -1) {
-			messages.put("message", "User already exists!");
+			request.setAttribute("messages", "User already exists!");
 		} else {
-			messages.put("message", "Successfully registered");
+			request.setAttribute("messages","Successfully registered");
 		}
-		request.setAttribute("messages", messages);
+		
 
 	    request.getRequestDispatcher("/jsp/registerpages/register.jsp").forward(request, response);
 

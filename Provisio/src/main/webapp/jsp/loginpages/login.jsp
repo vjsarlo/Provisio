@@ -149,13 +149,14 @@
 				  margin-top: 38px;
 				  outline: 0;
 				  text-align: center;
-				  width: 50%;
+				  width: 49%;
 				}
 				
 				.submit:hover {
 				  background-color: #dfaa5b;
 				  color: #192537;
-				}			
+				}	
+							
 			</style>
         </head>
 
@@ -177,8 +178,11 @@
 	                                    Welcome Back to Provisio! Please Sign In!
 	                            </h2>    						
 	                        </caption>
-	                        
-							<span style="color:red">${messages}</span>	
+	                        <% if (session.getAttribute("messages") != null) { %>
+								   	<b><span style="color:red"><%=session.getAttribute("messages")%></span></b>
+								    
+								<% } 
+								session.setAttribute("messages", null); %>
 	                        
 	                        <fieldset>
 	                            <div class="input-container ic1">
@@ -198,7 +202,14 @@
 							    </div>
 	                        </fieldset>
 	
-	                        <button type="submit" class="submit">Login!</button>
+	                        
+	                        <input type="submit" onClick="goToRegisterPage()" class="submit" value="Register"/>
+	                        <script>
+						      function goToRegisterPage() {
+						        window.location.href="/Provisio/jsp/registerpages/register.jsp";  
+						      }
+						    </script>
+             			    <button type="submit" class="submit">Login</button>
                         </form>
                     </div>                  
                 </div>
@@ -208,3 +219,4 @@
         </body>
 
         </html>
+     

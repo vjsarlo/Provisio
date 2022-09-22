@@ -1,4 +1,3 @@
->
 <div class="headerpre-login">
       <!-- Logo Header-->
       <div class="logo-div">
@@ -16,8 +15,8 @@
             <li class="login-register-list-header header-links-style">
               <a href="#">My Account </a>
               <ul class="submenu">
-                <li><a href="/Provisio/jsp/myAccount.jsp">Reservations</a></li>
-                <li><a href="/Provisio/jsp/myBookings.jsp">My Bookings</a></li>
+                <li><a href="/Provisio/jsp/myAccount.jsp">My Bookings</a></li>
+                <li><a href="/Provisio/jsp/myBookings.jsp">Reservation Search</a></li>
                 <li><a href="/Provisio/jsp/logout.jsp">Logout</a></li>
               </ul>
             </li>

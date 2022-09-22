@@ -150,7 +150,7 @@
 				  margin-top: 40px;
 				  outline: 0;
 				  text-align: center;
-				  width: 50%;
+				  width: 49%;
 				}
 				
 				.submit:hover {
@@ -176,7 +176,7 @@
 	                         Welcome To Our Family!<br> We Can't Wait To Meet You!
 	                     </h2> 
                     	<form method="post" action="${pageContext.request.contextPath}/register" class="register-form" id="register-form">
-							<span style="color:red">${messages.message}</span>	
+							<span style="color:red">${messages}</span>	
 	                        <fieldset>
 	                            <div class="input-container ic1">
 							        <input id="firstname" class="input" type="text" placeholder=" " value="" name="firstname" required="required"/>
@@ -209,8 +209,14 @@
 							    </div>
 	                        </fieldset>
 	                        
- 									                       
-	                        <button type="submit" class="submit">Register!</button>
+ 			              
+	                        <input type="submit" onClick="goToLoginPage()" class="submit" value="Login"/>
+	                        <script>
+						      function goToLoginPage() {
+						        window.location.href="/Provisio/jsp/loginpages/login.jsp";  
+						      }
+						    </script>
+						    <button type="submit" class="submit">Register</button>
                         </form>
                     </div>                  
                 </div>

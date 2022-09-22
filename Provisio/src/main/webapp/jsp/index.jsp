@@ -41,10 +41,14 @@
 		<div class="main-section-div">
 			<div class="main-section-text">Pack Your Luggage, Not Your
 				Worries. We'll Handle Everything You Need!</div>
+			<%
+			if (session.getAttribute("session") != "TRUE") {
+			%>	
 			<div class="main-section-login-button-div">
 				<a class="login-button-main login-button-style"
 					href="/Provisio/jsp/loginpages/login.jsp">Login</a>
 			</div>
+			<%}%>
 		</div>
 		<!-- MAIN SECTION END-->
 

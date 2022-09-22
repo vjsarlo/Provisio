@@ -25,7 +25,7 @@
 	href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="/Provisio/css/homepre.css">
-<title>My Bookings</title>
+<title>Reservation Search</title>
 
 </head>
 
@@ -56,7 +56,7 @@
 		<!-- MAIN SECTION START -->
 		
 		<div class="main-section-div-bookings">
-			<div class="main-section-text">My Bookings</div>
+			<div class="main-section-text">Previous Reservation Search</div>
 			<div class="reservation-id">
 				<div class="white-box-text">
 					
