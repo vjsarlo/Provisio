@@ -370,13 +370,22 @@
 	      if(e.keyCode != 9) // ignore tab
 	          e.preventDefault();
 	  });
-    $('#result-destination-header, #result-destination').on('change', function(){
-    	var value = $(this).val(); 
-      $("div.main-photo-div").hide();
-      $("#show" + value).show();
-      $("#attractionDetails div").hide();
-      $("#showAttraction" + value).show();
-    });   
+	$(document).ready(function(){
+		$('#result-destination-header').on('change', function(){
+	   		var value = $(this).val(); 
+	    	$("div.main-photo-div").hide();
+	      	$("#show" + value).show();
+	      	$("#attractionDetails div").hide();
+	      	$("#showAttraction" + value).show();
+		});
+		$('#result-destination').on('change', function(){
+	   		var value = $(this).val(); 
+	    	$("div.main-photo-div").hide();
+	      	$("#show" + value).show();
+	      	$("#attractionDetails div").hide();
+	      	$("#showAttraction" + value).show();
+		});
+    }); 
     $(document).ready(function(){
         $("#room1").click(function(){$("#roomDetails div").hide();
           $("#room1Details").show();          
