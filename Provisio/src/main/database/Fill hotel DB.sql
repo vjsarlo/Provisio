@@ -84,19 +84,19 @@ INSERT INTO `provisio`.`roomsize`(`idsize`,`idhotel`,`idroom`) values(1,2,203);
 -- 2. program needs to generate hashed password and insert into saltedpass table
 -- 3. pass hashed password and salt to this procedure
 
- Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('antonia.kiser@gmail.com','b16094ba4dc03fd3565ff7c1192cdef5','Antonia Kiser','antonia.kiser@gmail.com',5425877122); -- SuperSecretPassword
+ Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`,`points`) values('antonia.kiser@gmail.com','b16094ba4dc03fd3565ff7c1192cdef5','Antonia Kiser','antonia.kiser@gmail.com',5425877122,150); -- SuperSecretPassword
  Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('antonia.kiser@gmail.com','2cfb4bdeaef94d962ef7a99135d6865a');
  
-Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('odessa62@yahoo.com','8c3f9a4445fb34c72ed531ed52a51fbc','Levi Blaine','odessa62@yahoo.com',6235478125); -- Password
+Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`,`points`) values('odessa62@yahoo.com','8c3f9a4445fb34c72ed531ed52a51fbc','Levi Blaine','odessa62@yahoo.com',6235478125,450); -- Password
 Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('odessa62@yahoo.com','d6e6e202429fe291a17748a2d6a5a5cf');
  
-Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('wiseking@gmail.com','572eb653a38fd3c1e16c86cafbe37730','Jeff Solomon','wiseking@gmail.com',9205426841); -- pr3ttyWiz3guy44
+Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`,`points`) values('wiseking@gmail.com','572eb653a38fd3c1e16c86cafbe37730','Jeff Solomon','wiseking@gmail.com',9205426841,150); -- pr3ttyWiz3guy44
 Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('wiseking@gmail.com','a0c1459ead815cc80a284b165df2d634');
 
-Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('thebaran95@gmail.com','378ec27609a2bb828ca98e2551f5b95a','Jace Baran','thebaran95@gmail.com',7142358456); -- Fhy4qA8R
+Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`,`points`) values('thebaran95@gmail.com','378ec27609a2bb828ca98e2551f5b95a','Jace Baran','thebaran95@gmail.com',7142358456,0); -- Fhy4qA8R
 Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('thebaran95@gmail.com','e08b00c6ce6d3f82f54768d91dccf4f1');
 
-Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('mreckert23@yahoo.com','a723a02b003285e80633ac95123f985f','Jonathon Eckert','mreckert23@yahoo.com',4144144141); -- PF3HYunw
+Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`,`points`) values('mreckert23@yahoo.com','a723a02b003285e80633ac95123f985f','Jonathon Eckert','mreckert23@yahoo.com',4144144141,0); -- PF3HYunw
 Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('mreckert23@yahoo.com','a690d0ab16371dde970f9fee6d16b28e');
 -- reservation
 INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`,`points`) VALUES(1,101,1, '2023-08-11', '2023-8-12',1,151.97,'John Doe',150);
