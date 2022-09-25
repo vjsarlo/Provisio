@@ -3,7 +3,7 @@ package beans;
 import java.util.Date;
 
 public class ExistingReservation {
-	private String reservationID;
+	private Integer reservationID;
 	private Integer guestID;
 	private String name;
 	private Date checkinDate;
@@ -13,10 +13,13 @@ public class ExistingReservation {
 	private Double cost;
 	private String description;
 	private Boolean flat;
-	public String getReservationID() {
+	private Integer points;
+	private String location;
+	
+	public Integer getReservationID() {
 		return reservationID;
 	}
-	public void setReservationID(String reservationID) {
+	public void setReservationID(Integer reservationID) {
 		this.reservationID = reservationID;
 	}
 	public Integer getGuestID() {
@@ -73,6 +76,18 @@ public class ExistingReservation {
 	}
 	public void setFlat(Boolean flat) {
 		this.flat = flat;
+	}
+	public Integer getPoints() {
+		return points;
+	}
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	

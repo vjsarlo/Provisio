@@ -99,10 +99,9 @@ Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('thebaran95@gmail.
 Insert into `provisio`.`guest`(`username`,`password`,`name`,`email`,`phone`) values('mreckert23@yahoo.com','a723a02b003285e80633ac95123f985f','Jonathon Eckert','mreckert23@yahoo.com',4144144141); -- PF3HYunw
 Insert into `provisio`.`guestsalt`(`username`,`salt`) values ('mreckert23@yahoo.com','a690d0ab16371dde970f9fee6d16b28e');
 -- reservation
-INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`) VALUES(1,101,1, '2023-08-11', '2023-8-12',1,151.97,'John Doe');
-INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`) VALUES(2,201,2, '2023-10-16', '2023-10-19',2,507.99,'Mary Blaine');
-INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`) VALUES(3,101,2, '2022-09-11', '2022-9-12',5,110.00,'First Last');
-
+INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`,`points`) VALUES(1,101,1, '2023-08-11', '2023-8-12',1,151.97,'John Doe',150);
+INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`,`points`) VALUES(2,201,2, '2023-10-16', '2023-10-19',2,507.99,'Mary Blaine',450);
+INSERT INTO `provisio`.`reservation`(`idguest`,`idroom`, `idhotel`,`checkin`,`checkout`,`numberofguests`,`total`,`guestName`,`points`) VALUES(3,101,2, '2022-09-11', '2022-9-12',5,110.00,'First Last',150);
 -- reservation amenity
 Insert into `provisio`.`reservationamenity`(`idreservation`,`idamenity`) values (1,1);
 Insert into `provisio`.`reservationamenity`(`idreservation`,`idamenity`) values (1,2); 

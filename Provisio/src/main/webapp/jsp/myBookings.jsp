@@ -63,7 +63,7 @@
 					<form action="loadReservation.jsp" method="post">
 					  <label for="fname">Reservation ID:</label>
 					  <input type="text" id="reservationID" name="reservationID"><br><br>
-					  <input type="submit" value="Submit">
+					  <input type="submit" class="reservation-search-button" value="Search">
 					</form>
 				</div>
 			</div>

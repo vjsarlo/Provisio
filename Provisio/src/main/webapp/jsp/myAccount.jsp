@@ -88,26 +88,26 @@
 
 					if (custId != null && !custId.trim().equals("")) {
 					%>
-				
-						<%
-						String lastReservationNumber = null;
 
-						ArrayList<ExistingReservation> reservations = dataManager.getReservation(custId);
-						Iterator<ExistingReservation> iterator = reservations.iterator();
-						while (iterator.hasNext()) {
-							ExistingReservation reservation = (ExistingReservation) iterator.next();
-							if (lastReservationNumber !=reservation.getReservationID()){
-								lastReservationNumber = reservation.getReservationID();
-								System.out.println("Header for: "+lastReservationNumber);
-							
-						%>
-							<table>
+					<%
+					Integer lastReservationNumber = null;
+
+					ArrayList<ExistingReservation> reservations = dataManager.getReservation(custId);
+					Iterator<ExistingReservation> iterator = reservations.iterator();
+					while (iterator.hasNext()) {
+						ExistingReservation reservation = (ExistingReservation) iterator.next();
+						if (lastReservationNumber != reservation.getReservationID()) {
+							lastReservationNumber = reservation.getReservationID();
+					%>
+					<table>
 						<tr>
 							<th>Reservation Number</th>
 							<th>Checkin</th>
 							<th>Checkout</th>
 							<th>Number of Guests</th>
 							<th>Total</th>
+							<th>Points</th>
+							<th>Location</th>
 						</tr>
 						<tr>
 							<td><%=reservation.getReservationID()%></td>
@@ -115,6 +115,8 @@
 							<td><%=reservation.getCheckoutDate()%></td>
 							<td><%=reservation.getNumberOfGuests()%></td>
 							<td><%=reservation.getTotal()%></td>
+							<td><%=reservation.getPoints()%></td>
+							<td><%=reservation.getLocation()%></td>
 
 						</tr>
 
@@ -124,63 +126,75 @@
 							<th>Amenity</th>
 							<th>Price</th>
 						<tr>
-							<tr>
-									<% if (reservation.getDescription() != null){ %>
-									<td><%=reservation.getDescription()%></td>
-									<%}else{ %>
-										<td>None Selected</td>
-									<%} %>
-									
-		                           <% if (reservation.getCost() != 0){ %>
-									<td><%=reservation.getCost()%></td>
-									<%}else{ %>
-										<td></td>
-									<%} %>
-		                        </tr>
-		
-		                    <%
-				                    firstPass = false;
-				                    } else { //not first pass
-				                    %>
-						
-								<tr>
-		                            <td><%=reservation.getDescription()%></td>
-		                            <td><%=reservation.getCost()%></td>
-		                        </tr>
+						<tr>
+							<%
+							if (reservation.getDescription() != null) {
+							%>
+							<td><%=reservation.getDescription()%></td>
+							<%
+							} else {
+							%>
+							<td>None Selected</td>
+							<%
+							}
+							%>
 
-                       
-                  
-                		  <%
-                                                         		  }
-			                   %></table> <br><br>
-			                    <%  
+							<%
+							if (reservation.getCost() != 0) {
+							%>
+							<td><%=reservation.getCost()%></td>
+							<%
+							} else {
+							%>
+							<td></td>
+							<%
+							}
+							%>
+						</tr>
 
-                                                         		  }
-                                                         		  }
-                                                         		  %>
-                        
-                </div>
-                
-            </div>
-        </div>
-	<!-- MAIN SECTION END-->
+						<%
+						firstPass = false;
+						} else { //not first pass
+						%>
 
-	<!-- MAIN CONTENT START -->
+						<tr>
+							<td><%=reservation.getDescription()%></td>
+							<td><%=reservation.getCost()%></td>
+						</tr>
 
-	<!-- MAIN CONTENT END -->
+						<%
+						}
+						}
+						%>
+					</table>
+					<br>
+					<br>
+					<%
+					}
+					%>
 
-	<!-- FOOTER (Pre-Login) START -->
-	<%
-	if (session.getAttribute("session") != "TRUE") {
-	%>
-	<%@include file="footer_pre.jsp"%>
-	<%
-	} else {
-	%>
-	<%@include file="footer_post.jsp"%>
-	<%
-	}
-	%>
+				</div>
+
+			</div>
+		</div>
+		<!-- MAIN SECTION END-->
+
+		<!-- MAIN CONTENT START -->
+
+		<!-- MAIN CONTENT END -->
+
+		<!-- FOOTER (Pre-Login) START -->
+		<%
+		if (session.getAttribute("session") != "TRUE") {
+		%>
+		<%@include file="footer_pre.jsp"%>
+		<%
+		} else {
+		%>
+		<%@include file="footer_post.jsp"%>
+		<%
+		}
+		%>
 
 	</div>
 	<!-- CONTAINER DIV END -->

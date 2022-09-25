@@ -32,9 +32,11 @@
 				<th>Checkout</th>
 				<th>Number of Guests</th>
 				<th>Total</th>
+				<th>Points</th>
+				<th>Location</th>
 			</tr>
 			<%
-			String lastReservationNumber = null;
+			Integer lastReservationNumber = null;
 			ArrayList<ExistingReservation> reservations = dataManager.getReservation(reservationID);
 				Iterator<ExistingReservation> iterator = reservations.iterator();
 				while (iterator.hasNext()) {
@@ -51,6 +53,8 @@
 				<td><%=reservation.getCheckoutDate()%></td>
 				<td><%=reservation.getNumberOfGuests()%></td>
 				<td><%=reservation.getTotal()%></td>
+				<td><%=reservation.getPoints()%></td>
+				<td><%=reservation.getLocation()%></td>
 
 			</tr>
 

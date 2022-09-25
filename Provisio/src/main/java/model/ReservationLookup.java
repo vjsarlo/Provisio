@@ -21,8 +21,8 @@ public class ReservationLookup {
        
         
         String sql = "Select r.idreservation, r.idguest, g.name, r.checkin, r.checkout,"
-            + " r.numberofguests, r.total, a.cost, a.description, a.flat  "
-            + " from reservation r join guest g on g.idguest = r.idguest"
+            + " r.numberofguests, r.total, a.cost, a.description, a.flat, r.points, h.name"
+            + " from reservation r join guest g on g.idguest = r.idguest join hotel h on  r.idhotel=h.idhotel"
             + " left join reservationamenity ra on "
             + " ra.idreservation = r.idreservation"
             + " left join amenity a on ra.idamenity = a.idamenity"
@@ -33,7 +33,7 @@ public class ReservationLookup {
           try {
             while (rs.next()) {
               ExistingReservation existingReservation = new ExistingReservation();
-              existingReservation.setReservationID(rs.getString(1));
+              existingReservation.setReservationID(rs.getInt(1));
               existingReservation.setGuestID(rs.getInt(2));
               existingReservation.setName(rs.getString(3));
               existingReservation.setCheckinDate(rs.getDate(4));
@@ -43,6 +43,8 @@ public class ReservationLookup {
               existingReservation.setCost(rs.getDouble(8));
               existingReservation.setDescription(rs.getString(9));
               existingReservation.setFlat(rs.getBoolean(10));
+              existingReservation.setPoints(rs.getInt(11));
+              existingReservation.setLocation(rs.getString(12));
              
               Reservations.add(existingReservation);
               }
@@ -71,8 +73,8 @@ public class ReservationLookup {
        
         
         String sql = "Select r.idreservation, r.idguest, g.name, r.checkin, r.checkout,"
-            + " r.numberofguests, r.total, a.cost, a.description, a.flat  "
-            + " from reservation r join guest g on g.idguest = r.idguest"
+            + " r.numberofguests, r.total, a.cost, a.description, a.flat , r.points, h.name"
+            + " from reservation r join guest g on g.idguest = r.idguest join hotel h on  r.idhotel=h.idhotel"
             + " left join reservationamenity ra on "
             + " ra.idreservation = r.idreservation"
             + " left join amenity a on ra.idamenity = a.idamenity"
@@ -84,7 +86,7 @@ public class ReservationLookup {
           try {
             while (rs.next()) {
               ExistingReservation existingReservation = new ExistingReservation();
-              existingReservation.setReservationID(rs.getString(1));
+              existingReservation.setReservationID(rs.getInt(1));
               existingReservation.setGuestID(rs.getInt(2));
               existingReservation.setName(rs.getString(3));
               existingReservation.setCheckinDate(rs.getDate(4));
@@ -94,6 +96,8 @@ public class ReservationLookup {
               existingReservation.setCost(rs.getDouble(8));
               existingReservation.setDescription(rs.getString(9));
               existingReservation.setFlat(rs.getBoolean(10));
+              existingReservation.setPoints(rs.getInt(11));
+              existingReservation.setLocation(rs.getString(12));
               Reservations.add(existingReservation);
               }
             }

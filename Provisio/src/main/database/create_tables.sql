@@ -91,6 +91,7 @@ CREATE TABLE `reservation` (
   `checkout` datetime DEFAULT NULL,
   `numberofguests` int(11) DEFAULT NULL,
   `total` decimal(9,2) DEFAULT NULL,
+  `points` int(11) DEFAULT 0,
   PRIMARY KEY (`idreservation`),
   KEY `FK_Guest_Reservation_idx` (`idguest`),
   KEY `FK_Room_Reservation_idx` (`idroom`),

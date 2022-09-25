@@ -69,7 +69,7 @@
 					%>
 				
 						<%
-						String lastReservationNumber = null;
+						Integer lastReservationNumber = null;
 
 						ArrayList<ExistingReservation> reservations = dataManager.getReservationByID(custId, request.getParameter("reservationID"));
 						Iterator<ExistingReservation> iterator = reservations.iterator();
@@ -86,6 +86,8 @@
 							<th>Checkout</th>
 							<th>Number of Guests</th>
 							<th>Total</th>
+							<th>Points</th>
+							<th>Location</th>
 						</tr>
 						<tr>
 							<td><%=reservation.getReservationID()%></td>
@@ -93,6 +95,8 @@
 							<td><%=reservation.getCheckoutDate()%></td>
 							<td><%=reservation.getNumberOfGuests()%></td>
 							<td><%=reservation.getTotal()%></td>
+							<td><%=reservation.getPoints()%></td>
+							<td><%=reservation.getLocation()%></td>
 
 						</tr>
 
@@ -131,15 +135,16 @@
 
                        
                   
-                		  <%
-                                                         		  }
-			                   %></table> <br><br>
-			                    <%  
-
-                                                         		  }
-                                                         		  }
-                                                         		  %>
-                        
+						<%
+						}
+						}
+						%>
+					</table>
+					<br>
+					<br>
+					<%
+					}
+					%>
                 </div>
                 
             </div>
