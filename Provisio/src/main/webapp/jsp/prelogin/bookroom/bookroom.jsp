@@ -304,9 +304,9 @@
         </div>
       </form> 
        <%}else{ %>
-   		 <div id="login-div">
+   		 <div id="progress-step">
     	   <div class="main-section-text">
-        	  <h4>Login To Book Your Vacation!</h4>
+        	  <h1 id="registrationTitle">Login To Book Your Vacation!</h1>
 			</div>
 			<div class="btns-group">
 			 <a class="btn btn-login" href="/Provisio/jsp/loginpages/login.jsp">Login</a>
