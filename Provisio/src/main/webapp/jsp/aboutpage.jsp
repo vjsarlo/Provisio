@@ -95,7 +95,6 @@
 		<%@include file="footer_post.jsp"%>
 		<%}%>
 	</div>
-	</div>
 	<!-- FOOTER (Pre-Login END) -->
 	<!-- CONTAINER DIV END -->
 </body>

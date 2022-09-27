@@ -8,7 +8,7 @@
       <div class="header-links">
         <a class="home-link-header header-links-style" href="/Provisio/jsp/index.jsp">Home</a>
         <a class="about-us-link-header header-links-style" href="/Provisio/jsp/aboutpage.jsp">About Us</a>
-        <a class="locations-link-header header-links-style" href="/Provisio/jsp/locations.html">Locations</a>       
+        <a class="locations-link-header header-links-style" href="/Provisio/jsp/locations.jsp">Locations</a>       
         <a class="rooms-link-header header-links-style" href="">Rooms</a>
         <!-- Login/Register Drop Down Header -->
         <div class="login-register-div-header">
