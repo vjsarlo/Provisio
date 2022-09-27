@@ -97,6 +97,7 @@
 					while (iterator.hasNext()) {
 						ExistingReservation reservation = (ExistingReservation) iterator.next();
 						if (lastReservationNumber != reservation.getReservationID()) {
+							
 							lastReservationNumber = reservation.getReservationID();
 					%>
 					<table>
@@ -151,7 +152,7 @@
 							}
 							%>
 						</tr>
-
+						
 						<%
 						firstPass = false;
 						} else { //not first pass
@@ -163,12 +164,13 @@
 						</tr>
 
 						<%
+						
 						}
 						}
+					
 						%>
 					</table>
-					<br>
-					<br>
+					
 					<%
 					}
 					%>

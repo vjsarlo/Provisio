@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.DataManager;
+
 /**
  * Servlet implementation class BookingServlet
  */
@@ -46,6 +48,7 @@ public class BookingServlet extends HttpServlet {
         final String amenities = request.getParameter("choiceAmenities");
         final String amenitiesprice = request.getParameter("choiceAmenitiesPrice");
         final String total = request.getParameter("totalCost");
+        
         
         Connection con = null;
 		CallableStatement stmt = null;
@@ -94,6 +97,10 @@ public class BookingServlet extends HttpServlet {
             	confirmation = rs.getInt(1);
             	session.setAttribute("confirmation", confirmation);
             }
+            
+            processAmenities(con, amenities, confirmation);
+           
+            
             response.sendRedirect("/Provisio/jsp/loadReservation.jsp");
 			}catch(Exception e){
 				e.printStackTrace();
@@ -105,7 +112,25 @@ public class BookingServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 		}
-	}		
+	}	
+	
+	private static void processAmenities(Connection con, String amenities, Integer confirmation) throws ClassNotFoundException{
+		 //now insert the amenities selected
+        Boolean wifiSelected = amenities.contains("WiFi");
+        Boolean breakfastSelected = amenities.contains("Breakfast");
+        Boolean parkingSelected = amenities.contains("Parking");
+		DataManager dataManager = new DataManager();
+
+        if (Boolean.TRUE.equals(wifiSelected)) {
+        	dataManager.executeSQL("Insert into reservationAmenity (idreservation,idamenity) values("+confirmation+",1)");
+        }
+        if (Boolean.TRUE.equals(breakfastSelected)) {
+        	dataManager.executeSQL("Insert into reservationAmenity (idreservation,idamenity) values("+confirmation+",2)");
+       }
+        if (Boolean.TRUE.equals(parkingSelected)) {
+        	dataManager.executeSQL("Insert into reservationAmenity (idreservation,idamenity) values("+confirmation+",3)");
+       }
+	}
 }
 
 
