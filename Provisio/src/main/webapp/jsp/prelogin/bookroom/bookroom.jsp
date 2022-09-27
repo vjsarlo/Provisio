@@ -45,21 +45,21 @@
       <div class="rooms">
         <div class="roomimages">
             <div class="innerimg" id="room1Div" mytitle="Room 1">
-                <img src="/Provisio/images/Photos/DoubleFull.jpeg" alt="Double Full Beds" price="110.00" class="roomImg" id="room1" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Double Full Beds:">
+                <img src="/Provisio/images/Photos/DoubleFull.jpeg" alt="Double Full Beds" price="115.50" class="roomImg" id="room1" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Double Full Beds:">
                 <span>Double Full Beds</span>
             </div>
             <div class="innerimg" id="room2Div" mytitle="Room 2">
-                <img src="/Provisio/images/Photos/DoubleQueen.jpeg" alt="Double Queen Beds" price="150.00" class="roomImg" id="room2" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Double Queen Beds:">
+                <img src="/Provisio/images/Photos/DoubleQueen.jpeg" alt="Double Queen Beds" price="157.50" class="roomImg" id="room2" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Double Queen Beds:">
                 <span>Double Queen Beds</span>
             </div>
         </div>
         <div class="roomimages">
             <div class="innerimg" id="room3Div" mytitle="Room 3">
-                <img src="/Provisio/images/Photos/Queen.jpeg" alt="Queen Bed" price="125.00" class="roomImg" id="room3" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Queen Bed:">
+                <img src="/Provisio/images/Photos/Queen.jpeg" alt="Queen Bed" price="131.25" class="roomImg" id="room3" onmouseover='onHover(this)' onmouseout='offHover(this)' title="Queen Bed:">
                 <span>Queen Bed</span>
             </div>
             <div class="innerimg" id="room4Div" mytitle="Room 4">
-                <img src="/Provisio/images/Photos/King.jpeg" alt="King Bed" price="165.00" class="roomImg" id="room4" onmouseover='onHover(this)' onmouseout='offHover(this)' title="King Bed:">
+                <img src="/Provisio/images/Photos/King.jpeg" alt="King Bed" price="173.25" class="roomImg" id="room4" onmouseover='onHover(this)' onmouseout='offHover(this)' title="King Bed:">
                 <span>King Bed</span>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <h1 class="roomName">Double Full Beds</h1>
                 <br><br>
                 <h2 id="roomPrice">
-                  $110.00 / Night <br><br>
+                  $115.50 / Night <br><br>
                   Max Guests: 5 Guests
                 </h2>
               </div>
@@ -84,7 +84,7 @@
                 <h1 class="roomName">Double Queen Beds</h1>
                 <br><br>
                 <h2 id="roomPrice">
-                  $150.00 / Night<br><br>
+                  $157.50 / Night<br><br>
                   Max Guests: 5 Guests
                 </h2>
               </div>
@@ -92,7 +92,7 @@
                 <h1 class="roomName">Queen Bed</h1>
                 <br><br>
                 <h2 id="roomPrice">
-                  $125.00 / Night<br><br>
+                  $131.25 / Night<br><br>
                   Max Guests: 2 Guests
                 </h2>
               </div>
@@ -100,7 +100,7 @@
                 <h1 class="roomName">King Bed</h1>
                 <br><br>
                 <h2 id="roomPrice">
-                  $165.00 / Night<br><br>
+                  $173.25 / Night<br><br>
                   Max Guests: 2 Guests
                 </h2>
               </div>
@@ -162,10 +162,10 @@
             <select class="user_change room-choice select" data-name="choiceRoom" id="result-room" name="result-room">
             <!--<select class="room-choice select" id="result-room" name="result-room"> -->
               <option value="Choose Your Room" disabled selected hidden>Choose Your Room</option>
-              <option value="Double Full Beds" room-price="110.00" >Double Full Beds</option>
-              <option value="Double Queen Beds" room-price="150.00" >Double Queen Beds</option>
-              <option value="Queen Bed" room-price="125.00" >Queen Bed</option>
-              <option value="King Bed" room-price="165.00" >King Bed</option>
+              <option value="Double Full Beds" room-price="115.50" >Double Full Beds</option>
+              <option value="Double Queen Beds" room-price="157.50" >Double Queen Beds</option>
+              <option value="Queen Bed" room-price="131.25" >Queen Bed</option>
+              <option value="King Bed" room-price="173.25" >King Bed</option>
             </select>
           </div>
           <div class="input-group">
@@ -288,7 +288,7 @@
               </tr>
               <tr>
                 <th>Amenities Cost:</th>
-                <td><input id="choiceAmenitiesPrice" class="totalCostPiece readonly" name="choiceAmenitiesPrice" required></td>
+                <td><input id="choiceAmenitiesPrice" value=" " class="totalCostPiece readonly" name="choiceAmenitiesPrice" required></td>
               </tr>
               <tr>
                 <th>Total:</th>
@@ -416,21 +416,57 @@
         }
       });        
     });
+    
     $(document).ready(function () {
         $('.roomImg').click(function(){
             $('#result-room').val($(this).attr('alt'));
             $('#choiceRoom').val($(this).attr('alt'));
             $('#choiceRoomPrice').val($(this).attr('price'));
+            
+            var startDate = document.getElementById("result-checkin").value;
+            var endDate = document.getElementById("result-checkout").value;
+            var checkinDate = new Date(startDate);
+            var checkoutDate = new Date(endDate);
+            var today = new Date();
+            var year = today.getFullYear();
+            var fYear = today.getFullYear()+1;
+            var christmasEve = new Date(year+"-12-24");
+            var fourthJuly = new Date(fYear+"-7-4");
+            var newYearsEve = new Date(year+"-12-31");
+            
             var roomPrice = $(this).attr('price');
             var stayLength = $('#stayLength').val();
             var choiceAmenitiesPrice = $('#choiceAmenitiesPrice').val();
-            var price = roomPrice * stayLength;
-            var totalCost = parseFloat(price) + parseFloat(choiceAmenitiesPrice);
-            alert('Total Cost Changed To: $' + totalCost);
+            
+            if ( ((christmasEve.getTime() <= checkoutDate.getTime()) && (christmasEve.getTime() >= checkinDate.getTime())) ||
+              		((fourthJuly.getTime() <= checkoutDate.getTime()) && (fourthJuly.getTime() >= checkinDate.getTime())) || 
+              		((newYearsEve.getTime() <= checkoutDate.getTime()) && (newYearsEve.getTime() >= checkinDate.getTime())) ){
+            	var roomPriceHoliday = (roomPrice * .05).toFixed(2);
+            	var totalRoomPrice = (parseFloat(roomPrice) + parseFloat(roomPriceHoliday)).toFixed(2);
+            	$('#choiceRoomPrice').val(totalRoomPrice);
+            	console.log(roomPrice);
+            	console.log(roomPriceHoliday);
+            	console.log(totalRoomPrice);
+              } else {
+                var totalRoomPrice = roomPrice;
+              }
+            
+            
+            var price = (totalRoomPrice * stayLength).toFixed(2);
+            var totalCost = (parseFloat(price) + parseFloat(choiceAmenitiesPrice)).toFixed(2);
+            
+            if (choiceAmenitiesPrice != " ") {
+            	alert('Total Cost Changed To: $' + totalCost);
+            }
+            
+            //alert('Total Cost Changed To: $' + totalCost);
             $('#stayPrice').val(price);
             $('#totalCost').val(totalCost);
         });
     });
+    
+    
+    
     $(document).ready(function () {
       $("#result-room").change(function(){
         var element = $(this).find('option:selected');
