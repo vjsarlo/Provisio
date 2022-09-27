@@ -63,14 +63,33 @@ document.getElementById('result-destination-header').addEventListener("change", 
 function calculateDate() {
   var startDate = document.getElementById("result-checkin").value;
   var endDate = document.getElementById("result-checkout").value;
+  var checkinDate = new Date(startDate);
+  var checkoutDate = new Date(endDate);
+  var today = new Date();
+  var year = today.getFullYear();
+  var fYear = today.getFullYear()+1;
+  var christmasEve = new Date(year+"-12-24");
+  var fourthJuly = new Date(fYear+"-7-4");
+  var newYearsEve = new Date(year+"-12-31");
+  
+  var roomPrice = $('#result-room option:selected').attr('room-price');
+  
   var Difference_In_Time = new Date(endDate).getTime() - new Date(startDate).getTime();
   var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-  var roomPrice = $('#result-room option:selected').attr('room-price');
-
-  var totalCost = roomPrice * Difference_In_Days;
+  
+  if ( ((christmasEve.getTime() <= checkoutDate.getTime()) && (christmasEve.getTime() >= checkinDate.getTime())) ||
+  		((fourthJuly.getTime() <= checkoutDate.getTime()) && (fourthJuly.getTime() >= checkinDate.getTime())) || 
+  		((newYearsEve.getTime() <= checkoutDate.getTime()) && (newYearsEve.getTime() >= checkinDate.getTime())) ){
+	var roomPriceHoliday = (roomPrice * .05).toFixed(2);
+	var totalRoomPrice = (parseFloat(roomPrice) + parseFloat(roomPriceHoliday)).toFixed(2);
+	$('#choiceRoomPrice').val(totalRoomPrice);
+  } else {
+    var totalRoomPrice = roomPrice;
+  }
+  var totalCost = (totalRoomPrice * Difference_In_Days).toFixed(2);
   document.getElementById("stayLength").value = Difference_In_Days;
   document.getElementById("stayPrice").value = totalCost;
-} 
+}
 
 
 
