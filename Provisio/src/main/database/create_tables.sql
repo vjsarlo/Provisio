@@ -126,7 +126,7 @@ DROP procedure IF EXISTS `get_ids`;
 DELIMITER $$
 USE `provisio`$$
 CREATE PROCEDURE `get_ids` (
-	IN guestname VARCHAR(255),
+	IN guestid_in INT(11),
     OUT guestid INT(11),
     IN destinationchoice VARCHAR(45),
     OUT hotelid INT(11),
@@ -144,7 +144,7 @@ where (idroom) = (Select idroom from roomsize
                     limit 1
 				)
 and (idhotel) = (Select idhotel from hotel where UPPER(name) = UPPER(destinationchoice))
-and (idguest) = (Select idguest from guest where UPPER(name) =  UPPER(guestname));
+and (idguest) = guestId_in;
 END$$
 
 DELIMITER ;

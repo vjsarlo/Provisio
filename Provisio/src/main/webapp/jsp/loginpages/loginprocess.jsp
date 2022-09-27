@@ -17,7 +17,6 @@ boolean status = LoginDao.validate(obj);
 if (status) {
 	session.setAttribute("session", "TRUE");
  	session.setAttribute("customerID", obj.getIdGuest());
- 	
 
 	System.out.println("Customer ID in loginprocess.jsp: "  + obj.getIdGuest());
 	System.out.println("Customer ID in session "  + session.getAttribute("customerID"));

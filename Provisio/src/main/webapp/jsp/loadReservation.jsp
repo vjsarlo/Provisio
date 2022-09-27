@@ -60,18 +60,35 @@
 			
 				<div>
 					<%
-					String custId = session.getAttribute("customerID").toString();
-
+					String confirmation = "";
+					String reservationId = "";
 					boolean amenitiesSelected = false;
 					boolean firstPass = true;
-
+					
+					String custId = session.getAttribute("customerID").toString();
+					if (session.getAttribute("confirmation") != null){
+					      confirmation = session.getAttribute("confirmation").toString();
+					      session.setAttribute("confirmation", null);
+					}
+					if (request.getParameter("reservationID") != null){
+					 	 reservationId = request.getParameter("reservationID").toString();
+					}
+				
+					
+					//if confirmation number was passed as a result of the
+					// booking being created, use that to display reservation
+					if (confirmation!=""){
+						reservationId = confirmation;
+					}
 					if (custId != null && !custId.trim().equals("")) {
 					%>
 				
 						<%
 						Integer lastReservationNumber = null;
-
-						ArrayList<ExistingReservation> reservations = dataManager.getReservationByID(custId, request.getParameter("reservationID"));
+						
+				
+						ArrayList<ExistingReservation> reservations = dataManager.getReservationByID(custId, reservationId);
+						
 						Iterator<ExistingReservation> iterator = reservations.iterator();
 						while (iterator.hasNext()) {
 							ExistingReservation reservation = (ExistingReservation) iterator.next();
@@ -109,32 +126,42 @@
 							<th>Amenity</th>
 							<th>Price</th>
 						<tr>
-							<tr>
-									<% if (reservation.getDescription() != null){ %>
-									<td><%=reservation.getDescription()%></td>
-									<%}else{ %>
-										<td>None Selected</td>
-									<%} %>
-									
-		                           <% if (reservation.getCost() != 0){ %>
-									<td><%=reservation.getCost()%></td>
-									<%}else{ %>
-										<td></td>
-									<%} %>
-		                        </tr>
-		
-		                    <%
-				                    firstPass = false;
-				                    } else { //not first pass
-				                    %>
-						
-								<tr>
-		                            <td><%=reservation.getDescription()%></td>
-		                            <td><%=reservation.getCost()%></td>
-		                        </tr>
+						<tr>
+							<%
+							if (reservation.getDescription() != null) {
+							%>
+							<td><%=reservation.getDescription()%></td>
+							<%
+							} else {
+							%>
+							<td>None Selected</td>
+							<%
+							}
+							%>
 
-                       
-                  
+							<%
+							if (reservation.getCost() != 0) {
+							%>
+							<td><%=reservation.getCost()%></td>
+							<%
+							} else {
+							%>
+							<td></td>
+							<%
+							}
+							%>
+						</tr>
+
+						<%
+						firstPass = false;
+						} else { //not first pass
+						%>
+
+						<tr>
+							<td><%=reservation.getDescription()%></td>
+							<td><%=reservation.getCost()%></td>
+						</tr>
+
 						<%
 						}
 						}

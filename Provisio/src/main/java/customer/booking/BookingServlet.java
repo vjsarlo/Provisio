@@ -5,7 +5,9 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.sql.CallableStatement;
@@ -19,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class BookingServlet
@@ -46,12 +49,13 @@ public class BookingServlet extends HttpServlet {
         
         Connection con = null;
 		CallableStatement stmt = null;
-        
+		HttpSession session = request.getSession();
         try {
         	
         	con = DBConnection.getConnection();
 			stmt = con.prepareCall("{call get_ids(?,?,?,?,?, ?)}");
-			stmt.setString(1, guest);
+//			stmt.setString(1, guest);
+			stmt.setInt(1, (Integer)session.getAttribute("customerID"));
 			stmt.setString(3, hoteldestination);
 			stmt.setString(5, room);
 						
@@ -60,6 +64,7 @@ public class BookingServlet extends HttpServlet {
 			stmt.registerOutParameter(4, java.sql.Types.INTEGER);
 			stmt.registerOutParameter(6, java.sql.Types.INTEGER);
 			
+			System.out.println("Booking Servelet prepared statement: " + stmt);
 			stmt.execute();
 			
 			//read the OUT parameter now
@@ -81,7 +86,15 @@ public class BookingServlet extends HttpServlet {
             pst.setString(8, total);
             
             pst.executeUpdate();
-            response.sendRedirect("/Provisio/jsp/testconnection.jsp");
+            
+            Integer confirmation = 0;
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("SELECT LAST_INSERT_ID();");
+            while (rs.next()) {
+            	confirmation = rs.getInt(1);
+            	session.setAttribute("confirmation", confirmation);
+            }
+            response.sendRedirect("/Provisio/jsp/loadReservation.jsp");
 			}catch(Exception e){
 				e.printStackTrace();
 			}finally{
